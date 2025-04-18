@@ -1,0 +1,24 @@
+# MPLAB X
+nbproject/private/
+dist/
+build/
+*.X.production.hex
+*.X.production.elf
+*.X.debug.*
+*.X.memory
+*.X.map
+*.X.hex
+*.X.elf
+*.X.asm
+*.X.sdb
+*.X.sym
+*.X.p1
+*.X.lst
+*.X.err
+*.X.d
+
+# DS_Store (macOS)
+.DS_Store
+
+# Thumbs.db (Windows)
+Thumbs.db
