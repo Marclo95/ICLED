@@ -33,10 +33,42 @@
     THIS SOFTWARE.
 */
 #include "mcc_generated_files/system/system.h"
+#include "led_driver.h"
 
 /*
     Main application
 */
+
+void cycle_rgb_din1(void)
+{
+    ICLED_SendColor_DIN1(255, 0, 0); // Rouge
+    __delay_ms(300);
+    ICLED_SendColor_DIN1(0, 255, 0); // Vert
+    __delay_ms(300);
+    ICLED_SendColor_DIN1(0, 0, 255); // Bleu
+    __delay_ms(300);
+}
+
+void cycle_rgb_din2(void)
+{
+    ICLED_SendColor_DIN2(255, 0, 0);
+    __delay_ms(300);
+    ICLED_SendColor_DIN2(0, 255, 0);
+    __delay_ms(300);
+    ICLED_SendColor_DIN2(0, 0, 255);
+    __delay_ms(300);
+}
+
+void cycle_rgb_din3(void)
+{
+    ICLED_SendColor_DIN3(255, 0, 0);
+    __delay_ms(300);
+    ICLED_SendColor_DIN3(0, 255, 0);
+    __delay_ms(300);
+    ICLED_SendColor_DIN3(0, 0, 255);
+    __delay_ms(300);
+}
+
 
 int main(void)
 {
@@ -54,18 +86,8 @@ int main(void)
 
     while(1)
     {
-                // Bouton
-        if (BP1_GetValue() == 0) {  // bouton pressé (niveau bas)
-            LED_DEBUG_SetHigh();
-        } else {
-            LED_DEBUG_SetLow();
-        }
-
-        // Mesure de courant
-        uint16_t courant = ADCC_GetSingleConversion(channel_ANA4); // si V_Iled sur RA3
-        // Traitement...
-        
-        __delay_ms(100);
-
-    }    
+        cycle_rgb_din1();
+        cycle_rgb_din2();
+        cycle_rgb_din3();
+    }  
 }
