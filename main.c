@@ -77,17 +77,41 @@ int main(void) {
     LED_PIN = 0;
 
     while(1) {
-        send_color(255, 0, 0);  // Rouge plein
+        send_color(128, 0, 128);  // LED 0 : Rouge
+        /*send_color(0, 255, 0);  // LED 1 : Vert
+        send_color(0, 0, 255);  // LED 2 : Bleu
+        send_color(0, 0, 255);  // LED 0 : Bleu
+        send_color(255, 0, 0);  // LED 1 : Rouge
+        send_color(0, 255, 0);  // LED 2 : Vert
+        send_color(0, 255, 0);  // LED 0 : vert
+        send_color(0, 0, 255);  // LED 1 : Bleu
+        send_color(255, 0, 0);  // LED 2 : rouge
         ws2812_reset();
-        __delay_ms(1000);
+        __delay_ms(500);
 
-        send_color(0, 255, 0);  // Vert plein
+        send_color(0, 0, 255);  // LED 0 : Bleu
+        send_color(255, 0, 0);  // LED 1 : Rouge
+        send_color(0, 255, 0);  // LED 2 : Vert
+        send_color(0, 255, 0);  // LED 0 : vert
+        send_color(0, 0, 255);  // LED 1 : Bleu
+        send_color(255, 0, 0);  // LED 2 : rouge
+        send_color(255, 0, 0);  // LED 0 : Rouge
+        send_color(0, 255, 0);  // LED 1 : Vert
+        send_color(0, 0, 255);  // LED 2 : Bleu
         ws2812_reset();
-        __delay_ms(1000);
+        __delay_ms(500);
 
-       send_color(0, 0, 255);  // Bleu plein
+        send_color(0, 255, 0);  // LED 0 : vert
+        send_color(0, 0, 255);  // LED 1 : Bleu
+        send_color(255, 0, 0);  // LED 2 : rouge
+        send_color(255, 0, 0);  // LED 0 : Rouge
+        send_color(0, 255, 0);  // LED 1 : Vert
+        send_color(0, 0, 255);  // LED 2 : Bleu
+        send_color(0, 0, 255);  // LED 0 : Bleu
+        send_color(255, 0, 0);  // LED 1 : Rouge
+        send_color(0, 255, 0);  // LED 2 : Vert
         ws2812_reset();
-        __delay_ms(1000);
+        __delay_ms(500);*/
     }
 
     return 0;

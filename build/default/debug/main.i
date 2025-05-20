@@ -26200,17 +26200,8 @@ int main(void) {
     LATBbits.LATB5 = 0;
 
     while(1) {
-        send_color(255, 0, 0);
-        ws2812_reset();
-        _delay((unsigned long)((1000)*(64000000UL/4000.0)));
-
-        send_color(0, 255, 0);
-        ws2812_reset();
-        _delay((unsigned long)((1000)*(64000000UL/4000.0)));
-
-
-
-
+        send_color(128, 0, 128);
+# 115 "main.c"
     }
 
     return 0;

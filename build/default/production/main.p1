@@ -2337,43 +2337,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 2211 ]
 {
 "80
-[; ;main.c: 80:         send_color(255, 0, 0);
-[e ( _send_color (3 , , -> -> 255 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"81
-[; ;main.c: 81:         ws2812_reset();
-[e ( _ws2812_reset ..  ]
-"82
-[; ;main.c: 82:         _delay((unsigned long)((1000)*(64000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
-"84
-[; ;main.c: 84:         send_color(0, 255, 0);
-[e ( _send_color (3 , , -> -> 0 `i `uc -> -> 255 `i `uc -> -> 0 `i `uc ]
-"85
-[; ;main.c: 85:         ws2812_reset();
-[e ( _ws2812_reset ..  ]
-"86
-[; ;main.c: 86:         _delay((unsigned long)((1000)*(64000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
-"88
-[; ;main.c: 88:        send_color(0, 0, 255);
-[e ( _send_color (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 255 `i `uc ]
-"89
-[; ;main.c: 89:         ws2812_reset();
-[e ( _ws2812_reset ..  ]
-"90
-[; ;main.c: 90:         _delay((unsigned long)((1000)*(64000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
-"91
-[; ;main.c: 91:     }
+[; ;main.c: 80:         send_color(128, 0, 128);
+[e ( _send_color (3 , , -> -> 128 `i `uc -> -> 0 `i `uc -> -> 128 `i `uc ]
+"115
+[; ;main.c: 115:     }
 }
 [e :U 2210 ]
 [e $U 2211  ]
 [e :U 2212 ]
-"93
-[; ;main.c: 93:     return 0;
+"117
+[; ;main.c: 117:     return 0;
 [e ) -> 0 `i ]
 [e $UE 2209  ]
-"94
-[; ;main.c: 94: }
+"118
+[; ;main.c: 118: }
 [e :UE 2209 ]
 }
