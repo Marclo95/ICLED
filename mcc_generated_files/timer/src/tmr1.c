@@ -57,10 +57,10 @@ void TMR1_Initialize(void)
 
     T1GATE = (0 << _T1GATE_GSS_POSN);  // GSS T1G_pin
 
-    T1CLK = (1 << _T1CLK_CS_POSN);  // CS FOSC/4
+    T1CLK = (4 << _T1CLK_CS_POSN);  // CS LFINTOSC
 
-    TMR1H = 0xFF;              // Period 312.5ns; Timer clock 16000000 Hz;
-    TMR1L = 0xFB;
+    TMR1H = 0xF3;              // Period 100.03226ms; Timer clock 31000 Hz;
+    TMR1L = 0xE3;
 
     timer1ReloadVal=((uint16_t)TMR1H << 8) | TMR1L;
 	

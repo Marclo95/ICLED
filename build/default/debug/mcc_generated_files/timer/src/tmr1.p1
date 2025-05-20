@@ -2315,14 +2315,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/timer/src/tmr1.c: 58:     T1GATE = (0 << 0x0);
 [e = _T1GATE -> << -> 0 `i -> 0 `i `uc ]
 "60
-[; ;mcc_generated_files/timer/src/tmr1.c: 60:     T1CLK = (1 << 0x0);
-[e = _T1CLK -> << -> 1 `i -> 0 `i `uc ]
+[; ;mcc_generated_files/timer/src/tmr1.c: 60:     T1CLK = (4 << 0x0);
+[e = _T1CLK -> << -> 4 `i -> 0 `i `uc ]
 "62
-[; ;mcc_generated_files/timer/src/tmr1.c: 62:     TMR1H = 0xFF;
-[e = _TMR1H -> -> 255 `i `uc ]
+[; ;mcc_generated_files/timer/src/tmr1.c: 62:     TMR1H = 0xF3;
+[e = _TMR1H -> -> 243 `i `uc ]
 "63
-[; ;mcc_generated_files/timer/src/tmr1.c: 63:     TMR1L = 0xFB;
-[e = _TMR1L -> -> 251 `i `uc ]
+[; ;mcc_generated_files/timer/src/tmr1.c: 63:     TMR1L = 0xE3;
+[e = _TMR1L -> -> 227 `i `uc ]
 "65
 [; ;mcc_generated_files/timer/src/tmr1.c: 65:     timer1ReloadVal=((uint16_t)TMR1H << 8) | TMR1L;
 [e = _timer1ReloadVal -> | << -> -> _TMR1H `us `ui -> 8 `i -> _TMR1L `ui `us ]

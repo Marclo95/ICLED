@@ -26157,9 +26157,259 @@ unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 2 3
 # 36 "main.c" 2
 
+# 1 "./mcc_generated_files/system/system.h" 1
+# 40 "./mcc_generated_files/system/system.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdbool.h" 1 3
+# 41 "./mcc_generated_files/system/system.h" 2
+# 1 "./mcc_generated_files/system/config_bits.h" 1
+# 39 "./mcc_generated_files/system/config_bits.h"
+# 1 "./mcc_generated_files/system/../system/clock.h" 1
+# 56 "./mcc_generated_files/system/../system/clock.h"
+void CLOCK_Initialize(void);
+# 40 "./mcc_generated_files/system/config_bits.h" 2
+# 42 "./mcc_generated_files/system/system.h" 2
+# 1 "./mcc_generated_files/system/../system/pins.h" 1
+# 98 "./mcc_generated_files/system/../system/pins.h"
+void PIN_MANAGER_Initialize (void);
 
 
 
+
+
+
+
+void PIN_MANAGER_IOC(void);
+# 43 "./mcc_generated_files/system/system.h" 2
+# 1 "./mcc_generated_files/system/../system/interrupt.h" 1
+# 69 "./mcc_generated_files/system/../system/interrupt.h"
+void INTERRUPT_Initialize (void);
+# 218 "./mcc_generated_files/system/../system/interrupt.h"
+void INT0_ISR(void);
+# 227 "./mcc_generated_files/system/../system/interrupt.h"
+void INT0_CallBack(void);
+# 236 "./mcc_generated_files/system/../system/interrupt.h"
+void INT0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 246 "./mcc_generated_files/system/../system/interrupt.h"
+extern void (*INT0_InterruptHandler)(void);
+# 255 "./mcc_generated_files/system/../system/interrupt.h"
+void INT0_DefaultInterruptHandler(void);
+# 264 "./mcc_generated_files/system/../system/interrupt.h"
+void INT1_ISR(void);
+# 273 "./mcc_generated_files/system/../system/interrupt.h"
+void INT1_CallBack(void);
+# 282 "./mcc_generated_files/system/../system/interrupt.h"
+void INT1_SetInterruptHandler(void (* InterruptHandler)(void));
+# 292 "./mcc_generated_files/system/../system/interrupt.h"
+extern void (*INT1_InterruptHandler)(void);
+# 301 "./mcc_generated_files/system/../system/interrupt.h"
+void INT1_DefaultInterruptHandler(void);
+# 310 "./mcc_generated_files/system/../system/interrupt.h"
+void INT2_ISR(void);
+# 319 "./mcc_generated_files/system/../system/interrupt.h"
+void INT2_CallBack(void);
+# 328 "./mcc_generated_files/system/../system/interrupt.h"
+void INT2_SetInterruptHandler(void (* InterruptHandler)(void));
+# 338 "./mcc_generated_files/system/../system/interrupt.h"
+extern void (*INT2_InterruptHandler)(void);
+# 347 "./mcc_generated_files/system/../system/interrupt.h"
+void INT2_DefaultInterruptHandler(void);
+# 44 "./mcc_generated_files/system/system.h" 2
+
+# 1 "./mcc_generated_files/system/../timer/tmr1.h" 1
+# 40 "./mcc_generated_files/system/../timer/tmr1.h"
+# 1 "./mcc_generated_files/system/../timer/tmr1_deprecated.h" 1
+# 41 "./mcc_generated_files/system/../timer/tmr1.h" 2
+# 194 "./mcc_generated_files/system/../timer/tmr1.h"
+void TMR1_Initialize(void);
+
+
+
+
+
+
+
+void TMR1_Deinitialize(void);
+# 211 "./mcc_generated_files/system/../timer/tmr1.h"
+void TMR1_Start(void);
+# 220 "./mcc_generated_files/system/../timer/tmr1.h"
+void TMR1_Stop(void);
+# 229 "./mcc_generated_files/system/../timer/tmr1.h"
+uint16_t TMR1_CounterGet(void);
+# 238 "./mcc_generated_files/system/../timer/tmr1.h"
+void TMR1_CounterSet(uint16_t timerVal);
+# 247 "./mcc_generated_files/system/../timer/tmr1.h"
+void TMR1_PeriodSet(uint16_t periodVal);
+
+
+
+
+
+
+
+uint16_t TMR1_PeriodGet(void);
+# 264 "./mcc_generated_files/system/../timer/tmr1.h"
+void TMR1_Reload(void);
+
+
+
+
+
+
+
+uint16_t TMR1_MaxCountGet(void);
+# 281 "./mcc_generated_files/system/../timer/tmr1.h"
+void TMR1_SinglePulseAcquisitionStart(void);
+# 290 "./mcc_generated_files/system/../timer/tmr1.h"
+uint8_t TMR1_GateStateGet(void);
+
+
+
+
+
+
+
+void TMR1_OverflowInterruptEnable(void);
+
+
+
+
+
+
+
+void TMR1_OverflowInterruptDisable(void);
+
+
+
+
+
+
+
+void TMR1_OverflowISR(void);
+# 323 "./mcc_generated_files/system/../timer/tmr1.h"
+_Bool TMR1_GateEventStatusGet(void);
+
+
+
+
+
+
+
+void TMR1_GateEventStatusClear(void);
+
+
+
+
+
+
+
+void TMR1_Tasks(void);
+
+
+
+
+
+
+
+ void TMR1_OverflowCallbackRegister(void (* CallbackHandler)(void));
+
+
+
+
+
+
+
+ void TMR1_GateCallbackRegister(void (* CallbackHandler)(void));
+# 46 "./mcc_generated_files/system/system.h" 2
+
+
+
+
+
+
+
+void SYSTEM_Initialize(void);
+# 38 "main.c" 2
+# 1 "./main.h" 1
+# 40 "./main.h"
+void off_leds(void);
+void send_color(uint8_t r, uint8_t g, uint8_t b);
+void ws2812_reset();
+void send_byte(uint8_t byte);
+void send_leds ( void);
+void on_leds ( void);
+# 39 "main.c" 2
+# 49 "main.c"
+typedef struct GRB {
+      union{
+        struct {
+           uint8_t green ;
+           uint8_t red;
+           uint8_t blue;
+
+        };
+        uint8_t colors[3];
+        uint24_t color;
+    };
+}GRB;
+
+GRB matrix_tab [12][12];
+
+_Bool flag_start = 0 ;
+
+
+
+void off_leds(void){
+    uint8_t i = 0;
+     uint8_t j = 0;
+
+    for(i = 0 ; i< 12 ; i++ ){
+        for(j= 0 ; j< 12 ; j++ ){
+            matrix_tab[i][j].red = 0;
+            matrix_tab[i][j].green = 0;
+            matrix_tab[i][j].blue = 0;
+        }
+    }
+
+}
+
+void on_leds(void){
+    uint8_t i = 0;
+     uint8_t j = 0;
+
+    for(i = 0 ; i< 12 ; i++ ){
+        for(j= 0 ; j< 12 ; j++ ){
+            matrix_tab[i][j].red = 60;
+            matrix_tab[i][j].green = 20;
+            matrix_tab[i][j].blue = 0;
+        }
+    }
+
+}
+
+
+void send_leds ( void){
+    uint8_t i = 0;
+     uint8_t j = 0;
+
+    for(i = 0 ; i< 12 ; i++ ){
+        for(j= 0 ; j< 12 ; j++ ){
+            send_color(matrix_tab[i][j].red,matrix_tab[i][j].green, matrix_tab[i][j].blue);
+        }
+    }
+     ws2812_reset();
+}
+
+void TMR1_handler( void){
+
+
+    static uint16_t timer_1s = 0;
+
+    if( timer_1s ++ > 20){
+        timer_1s = 0;
+        flag_start = !flag_start;
+    }
+
+}
 
 
 
@@ -26196,12 +26446,28 @@ void ws2812_reset() {
 }
 
 int main(void) {
+
+    SYSTEM_Initialize();
+
+    TMR1_OverflowCallbackRegister(TMR1_handler);
+
+    (INTCON0bits.GIE = 1);
     TRISBbits.TRISB5 = 0;
     LATBbits.LATB5 = 0;
 
+    uint8_t position = 0;
+
     while(1) {
-        send_color(128, 0, 128);
-# 115 "main.c"
+
+        if( flag_start == 1){
+            on_leds();
+        }else{
+            off_leds();
+        }
+        (INTCON0bits.GIE = 0);
+        send_leds();
+        (INTCON0bits.GIE = 1);
+# 235 "main.c"
     }
 
     return 0;
