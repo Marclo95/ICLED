@@ -153,22 +153,21 @@ void off_leds(void){
      
 }
 
-void on_leds(void){
+void on_leds(uint8_t r, uint8_t g, uint8_t b){
     uint8_t i = 0;
      uint8_t j = 0;
-    
     for(i = 0 ; i< LIGNE ; i++ ){
         for(j= 0 ; j< COLUMN ; j++ ){  
-            matrix_tab[i][j].red = 60;
-            matrix_tab[i][j].green = 20;
-            matrix_tab[i][j].blue = 0;
+            matrix_tab[i][j].red = r;
+            matrix_tab[i][j].green = g;
+            matrix_tab[i][j].blue = b;
         }
     }
-     
+     send_leds();
 }
 
 
-void send_leds ( void){
+void send_leds (void){
     uint8_t i = 0;
      uint8_t j = 0;
      
@@ -263,20 +262,20 @@ void int_BP3(void) {
 }
 
 // --- Action du bouton 3 selon le contexte ---
-/*void appliquer_action(void) {
+void appliquer_action(void) {
     switch (etat_courant) {
         case ICLED_COULEUR1:
             // Allume LED en rouge
-            send_color(100, 0, 0);
-            
+            on_leds(100, 0, 0);
+            break;
         case ICLED_COULEUR2:
             // Allume LED en vert
-            send_color(0, 100, 0);
-            
+            on_leds(0, 100, 0);
+            break;
         case ICLED_COULEUR3:
             // Allume LED en bleu
-            send_color(0, 0, 100);
-            
+            on_leds(0, 0, 100);
+            break;
         case MENU_COURANT:
         case MESURE_COURANT:
             // afficher valeur de courant
@@ -285,7 +284,7 @@ void int_BP3(void) {
         default:
             break;
     }
-}*/
+}
 
 // ===============================================
 //         Gestion du timer via interruption

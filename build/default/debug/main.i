@@ -26598,8 +26598,8 @@ void off_leds(void);
 void send_color(uint8_t r, uint8_t g, uint8_t b);
 void ws2812_reset();
 void send_byte(uint8_t byte);
-void send_leds ( void);
-void on_leds ( void);
+void send_leds (void);
+void on_leds (uint8_t r, uint8_t g, uint8_t b);
 void LCD_UpdateMenu(void);
 void appliquer_action(void);
 # 44 "main.c" 2
@@ -26707,22 +26707,21 @@ void off_leds(void){
 
 }
 
-void on_leds(void){
+void on_leds(uint8_t r, uint8_t g, uint8_t b){
     uint8_t i = 0;
      uint8_t j = 0;
-
     for(i = 0 ; i< 12 ; i++ ){
         for(j= 0 ; j< 12 ; j++ ){
-            matrix_tab[i][j].red = 60;
-            matrix_tab[i][j].green = 20;
-            matrix_tab[i][j].blue = 0;
+            matrix_tab[i][j].red = r;
+            matrix_tab[i][j].green = g;
+            matrix_tab[i][j].blue = b;
         }
     }
-
+     send_leds();
 }
 
 
-void send_leds ( void){
+void send_leds (void){
     uint8_t i = 0;
      uint8_t j = 0;
 
@@ -26821,15 +26820,15 @@ void appliquer_action(void) {
     switch (etat_courant) {
         case ICLED_COULEUR1:
 
-            send_color(100, 0, 0);
+            on_leds(100, 0, 0);
             break;
         case ICLED_COULEUR2:
 
-            send_color(0, 100, 0);
+            on_leds(0, 100, 0);
             break;
         case ICLED_COULEUR3:
 
-            send_color(0, 0, 100);
+            on_leds(0, 0, 100);
             break;
         case MENU_COURANT:
         case MESURE_COURANT:
@@ -26882,14 +26881,10 @@ int main(void) {
     uint8_t frame = 0;
 
 
-    uint8_t menu = 0;
-    uint8_t sous_menu = 0;
-
-
     LCD_UpdateMenu();
 
     while(1) {
-# 412 "main.c"
+# 407 "main.c"
     }
 
     return 0;

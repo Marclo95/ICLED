@@ -38,8 +38,8 @@ void off_leds(void);
 void send_color(uint8_t r, uint8_t g, uint8_t b);
 void ws2812_reset();
 void send_byte(uint8_t byte);
-void send_leds ( void);
-void on_leds ( void);
+void send_leds (void);
+void on_leds (uint8_t r, uint8_t g, uint8_t b);
 void LCD_UpdateMenu(void);
 void appliquer_action(void);
 
