@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/system/src/system.c"
+# 1 "LCM_S01604DSF.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 285 "<built-in>" 3
@@ -6,10 +6,16 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/system/src/system.c" 2
-# 35 "mcc_generated_files/system/src/system.c"
-# 1 "mcc_generated_files/system/src/../system.h" 1
-# 38 "mcc_generated_files/system/src/../system.h"
+# 1 "LCM_S01604DSF.c" 2
+
+
+
+
+
+
+
+# 1 "./LCMS01604DSF.h" 1
+# 32 "./LCMS01604DSF.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -26157,19 +26163,241 @@ __attribute__((__unsupported__("The READTIMER" "0" "() macro is not available wi
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 2 3
-# 39 "mcc_generated_files/system/src/../system.h" 2
+# 33 "./LCMS01604DSF.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdbool.h" 1 3
-# 41 "mcc_generated_files/system/src/../system.h" 2
-# 1 "mcc_generated_files/system/src/../config_bits.h" 1
-# 39 "mcc_generated_files/system/src/../config_bits.h"
-# 1 "mcc_generated_files/system/src/../../system/clock.h" 1
-# 56 "mcc_generated_files/system/src/../../system/clock.h"
+# 35 "./LCMS01604DSF.h" 2
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdio.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 1 3
+# 12 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 143 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef __int24 ssize_t;
+# 255 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef long long off_t;
+# 409 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 25 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdio.h" 2 3
+# 52 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+
+
+
+
+
+int ungetc(int, FILE *);
+int getch(void);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+
+
+
+
+
+void putch(char);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+__attribute__((__format__(__printf__, 1, 2)))
+int printf(const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int fprintf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int sprintf(char *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 3, 4)))
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+__attribute__((__format__(__printf__, 1, 0)))
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 2, 0)))
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 3, 0)))
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+__attribute__((__format__(__scanf__, 1, 2)))
+int scanf(const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int fscanf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int sscanf(const char *restrict, const char *restrict, ...);
+
+__attribute__((__format__(__scanf__, 1, 0)))
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__scanf__, 2, 0)))
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
+
+
+
+
+
+
+
+char *tempnam(const char *, const char *);
+# 36 "./LCMS01604DSF.h" 2
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/string.h" 1 3
+# 25 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/string.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 1 3
+# 421 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef struct __locale_struct * locale_t;
+# 26 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/string.h" 2 3
+
+void *memcpy (void *restrict, const void *restrict, size_t);
+void *memmove (void *, const void *, size_t);
+void *memset (void *, int, size_t);
+int memcmp (const void *, const void *, size_t);
+void *memchr (const void *, int, size_t);
+
+char *strcpy (char *restrict, const char *restrict);
+char *strncpy (char *restrict, const char *restrict, size_t);
+
+char *strcat (char *restrict, const char *restrict);
+char *strncat (char *restrict, const char *restrict, size_t);
+
+int strcmp (const char *, const char *);
+int strncmp (const char *, const char *, size_t);
+
+int strcoll (const char *, const char *);
+size_t strxfrm (char *restrict, const char *restrict, size_t);
+
+char *strchr (const char *, int);
+char *strrchr (const char *, int);
+
+size_t strcspn (const char *, const char *);
+size_t strspn (const char *, const char *);
+char *strpbrk (const char *, const char *);
+char *strstr (const char *, const char *);
+char *strtok (char *restrict, const char *restrict);
+
+size_t strlen (const char *);
+
+char *strerror (int);
+
+
+
+
+char *strtok_r (char *restrict, const char *restrict, char **restrict);
+int strerror_r (int, char *, size_t);
+char *stpcpy(char *restrict, const char *restrict);
+char *stpncpy(char *restrict, const char *restrict, size_t);
+size_t strnlen (const char *, size_t);
+char *strdup (const char *);
+char *strndup (const char *, size_t);
+char *strsignal(int);
+char *strerror_l (int, locale_t);
+int strcoll_l (const char *, const char *, locale_t);
+size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
+
+
+
+
+void *memccpy (void *restrict, const void *restrict, int, size_t);
+# 37 "./LCMS01604DSF.h" 2
+# 57 "./LCMS01604DSF.h"
+void LCD_Init(void);
+void LCD_Command(uint8_t cmd);
+void LCD_Char(char data);
+void LCD_String(const char *str);
+void LCD_SetCursor(uint8_t row, uint8_t column);
+void LCD_Clear(void);
+# 9 "LCM_S01604DSF.c" 2
+
+# 1 "./mcc_generated_files/system/system.h" 1
+# 41 "./mcc_generated_files/system/system.h"
+# 1 "./mcc_generated_files/system/config_bits.h" 1
+# 39 "./mcc_generated_files/system/config_bits.h"
+# 1 "./mcc_generated_files/system/../system/clock.h" 1
+# 56 "./mcc_generated_files/system/../system/clock.h"
 void CLOCK_Initialize(void);
-# 40 "mcc_generated_files/system/src/../config_bits.h" 2
-# 42 "mcc_generated_files/system/src/../system.h" 2
-# 1 "mcc_generated_files/system/src/../../system/pins.h" 1
-# 361 "mcc_generated_files/system/src/../../system/pins.h"
+# 40 "./mcc_generated_files/system/config_bits.h" 2
+# 42 "./mcc_generated_files/system/system.h" 2
+# 1 "./mcc_generated_files/system/../system/pins.h" 1
+# 361 "./mcc_generated_files/system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -26187,11 +26415,11 @@ void PIN_MANAGER_IOC(void);
 
 
 void BP1_ISR(void);
-# 387 "mcc_generated_files/system/src/../../system/pins.h"
+# 387 "./mcc_generated_files/system/../system/pins.h"
 void BP1_SetInterruptHandler(void (* InterruptHandler)(void));
-# 398 "mcc_generated_files/system/src/../../system/pins.h"
+# 398 "./mcc_generated_files/system/../system/pins.h"
 extern void (*BP1_InterruptHandler)(void);
-# 409 "mcc_generated_files/system/src/../../system/pins.h"
+# 409 "./mcc_generated_files/system/../system/pins.h"
 void BP1_DefaultInterruptHandler(void);
 
 
@@ -26201,11 +26429,11 @@ void BP1_DefaultInterruptHandler(void);
 
 
 void BP2_ISR(void);
-# 427 "mcc_generated_files/system/src/../../system/pins.h"
+# 427 "./mcc_generated_files/system/../system/pins.h"
 void BP2_SetInterruptHandler(void (* InterruptHandler)(void));
-# 438 "mcc_generated_files/system/src/../../system/pins.h"
+# 438 "./mcc_generated_files/system/../system/pins.h"
 extern void (*BP2_InterruptHandler)(void);
-# 449 "mcc_generated_files/system/src/../../system/pins.h"
+# 449 "./mcc_generated_files/system/../system/pins.h"
 void BP2_DefaultInterruptHandler(void);
 
 
@@ -26215,53 +26443,53 @@ void BP2_DefaultInterruptHandler(void);
 
 
 void BP3_ISR(void);
-# 467 "mcc_generated_files/system/src/../../system/pins.h"
+# 467 "./mcc_generated_files/system/../system/pins.h"
 void BP3_SetInterruptHandler(void (* InterruptHandler)(void));
-# 478 "mcc_generated_files/system/src/../../system/pins.h"
+# 478 "./mcc_generated_files/system/../system/pins.h"
 extern void (*BP3_InterruptHandler)(void);
-# 489 "mcc_generated_files/system/src/../../system/pins.h"
+# 489 "./mcc_generated_files/system/../system/pins.h"
 void BP3_DefaultInterruptHandler(void);
-# 43 "mcc_generated_files/system/src/../system.h" 2
-# 1 "mcc_generated_files/system/src/../../system/interrupt.h" 1
-# 69 "mcc_generated_files/system/src/../../system/interrupt.h"
+# 43 "./mcc_generated_files/system/system.h" 2
+# 1 "./mcc_generated_files/system/../system/interrupt.h" 1
+# 69 "./mcc_generated_files/system/../system/interrupt.h"
 void INTERRUPT_Initialize (void);
-# 218 "mcc_generated_files/system/src/../../system/interrupt.h"
+# 218 "./mcc_generated_files/system/../system/interrupt.h"
 void INT0_ISR(void);
-# 227 "mcc_generated_files/system/src/../../system/interrupt.h"
+# 227 "./mcc_generated_files/system/../system/interrupt.h"
 void INT0_CallBack(void);
-# 236 "mcc_generated_files/system/src/../../system/interrupt.h"
+# 236 "./mcc_generated_files/system/../system/interrupt.h"
 void INT0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 246 "mcc_generated_files/system/src/../../system/interrupt.h"
+# 246 "./mcc_generated_files/system/../system/interrupt.h"
 extern void (*INT0_InterruptHandler)(void);
-# 255 "mcc_generated_files/system/src/../../system/interrupt.h"
+# 255 "./mcc_generated_files/system/../system/interrupt.h"
 void INT0_DefaultInterruptHandler(void);
-# 264 "mcc_generated_files/system/src/../../system/interrupt.h"
+# 264 "./mcc_generated_files/system/../system/interrupt.h"
 void INT1_ISR(void);
-# 273 "mcc_generated_files/system/src/../../system/interrupt.h"
+# 273 "./mcc_generated_files/system/../system/interrupt.h"
 void INT1_CallBack(void);
-# 282 "mcc_generated_files/system/src/../../system/interrupt.h"
+# 282 "./mcc_generated_files/system/../system/interrupt.h"
 void INT1_SetInterruptHandler(void (* InterruptHandler)(void));
-# 292 "mcc_generated_files/system/src/../../system/interrupt.h"
+# 292 "./mcc_generated_files/system/../system/interrupt.h"
 extern void (*INT1_InterruptHandler)(void);
-# 301 "mcc_generated_files/system/src/../../system/interrupt.h"
+# 301 "./mcc_generated_files/system/../system/interrupt.h"
 void INT1_DefaultInterruptHandler(void);
-# 310 "mcc_generated_files/system/src/../../system/interrupt.h"
+# 310 "./mcc_generated_files/system/../system/interrupt.h"
 void INT2_ISR(void);
-# 319 "mcc_generated_files/system/src/../../system/interrupt.h"
+# 319 "./mcc_generated_files/system/../system/interrupt.h"
 void INT2_CallBack(void);
-# 328 "mcc_generated_files/system/src/../../system/interrupt.h"
+# 328 "./mcc_generated_files/system/../system/interrupt.h"
 void INT2_SetInterruptHandler(void (* InterruptHandler)(void));
-# 338 "mcc_generated_files/system/src/../../system/interrupt.h"
+# 338 "./mcc_generated_files/system/../system/interrupt.h"
 extern void (*INT2_InterruptHandler)(void);
-# 347 "mcc_generated_files/system/src/../../system/interrupt.h"
+# 347 "./mcc_generated_files/system/../system/interrupt.h"
 void INT2_DefaultInterruptHandler(void);
-# 44 "mcc_generated_files/system/src/../system.h" 2
+# 44 "./mcc_generated_files/system/system.h" 2
 
-# 1 "mcc_generated_files/system/src/../../timer/tmr1.h" 1
-# 40 "mcc_generated_files/system/src/../../timer/tmr1.h"
-# 1 "mcc_generated_files/system/src/../../timer/tmr1_deprecated.h" 1
-# 41 "mcc_generated_files/system/src/../../timer/tmr1.h" 2
-# 194 "mcc_generated_files/system/src/../../timer/tmr1.h"
+# 1 "./mcc_generated_files/system/../timer/tmr1.h" 1
+# 40 "./mcc_generated_files/system/../timer/tmr1.h"
+# 1 "./mcc_generated_files/system/../timer/tmr1_deprecated.h" 1
+# 41 "./mcc_generated_files/system/../timer/tmr1.h" 2
+# 194 "./mcc_generated_files/system/../timer/tmr1.h"
 void TMR1_Initialize(void);
 
 
@@ -26271,15 +26499,15 @@ void TMR1_Initialize(void);
 
 
 void TMR1_Deinitialize(void);
-# 211 "mcc_generated_files/system/src/../../timer/tmr1.h"
+# 211 "./mcc_generated_files/system/../timer/tmr1.h"
 void TMR1_Start(void);
-# 220 "mcc_generated_files/system/src/../../timer/tmr1.h"
+# 220 "./mcc_generated_files/system/../timer/tmr1.h"
 void TMR1_Stop(void);
-# 229 "mcc_generated_files/system/src/../../timer/tmr1.h"
+# 229 "./mcc_generated_files/system/../timer/tmr1.h"
 uint16_t TMR1_CounterGet(void);
-# 238 "mcc_generated_files/system/src/../../timer/tmr1.h"
+# 238 "./mcc_generated_files/system/../timer/tmr1.h"
 void TMR1_CounterSet(uint16_t timerVal);
-# 247 "mcc_generated_files/system/src/../../timer/tmr1.h"
+# 247 "./mcc_generated_files/system/../timer/tmr1.h"
 void TMR1_PeriodSet(uint16_t periodVal);
 
 
@@ -26289,7 +26517,7 @@ void TMR1_PeriodSet(uint16_t periodVal);
 
 
 uint16_t TMR1_PeriodGet(void);
-# 264 "mcc_generated_files/system/src/../../timer/tmr1.h"
+# 264 "./mcc_generated_files/system/../timer/tmr1.h"
 void TMR1_Reload(void);
 
 
@@ -26299,9 +26527,9 @@ void TMR1_Reload(void);
 
 
 uint16_t TMR1_MaxCountGet(void);
-# 281 "mcc_generated_files/system/src/../../timer/tmr1.h"
+# 281 "./mcc_generated_files/system/../timer/tmr1.h"
 void TMR1_SinglePulseAcquisitionStart(void);
-# 290 "mcc_generated_files/system/src/../../timer/tmr1.h"
+# 290 "./mcc_generated_files/system/../timer/tmr1.h"
 uint8_t TMR1_GateStateGet(void);
 
 
@@ -26327,7 +26555,7 @@ void TMR1_OverflowInterruptDisable(void);
 
 
 void TMR1_OverflowISR(void);
-# 323 "mcc_generated_files/system/src/../../timer/tmr1.h"
+# 323 "./mcc_generated_files/system/../timer/tmr1.h"
 _Bool TMR1_GateEventStatusGet(void);
 
 
@@ -26361,7 +26589,7 @@ void TMR1_Tasks(void);
 
 
  void TMR1_GateCallbackRegister(void (* CallbackHandler)(void));
-# 46 "mcc_generated_files/system/src/../system.h" 2
+# 46 "./mcc_generated_files/system/system.h" 2
 
 
 
@@ -26370,15 +26598,56 @@ void TMR1_Tasks(void);
 
 
 void SYSTEM_Initialize(void);
-# 36 "mcc_generated_files/system/src/system.c" 2
+# 11 "LCM_S01604DSF.c" 2
 
 
 
+static void LCD_EnablePulse(void) {
+     do { LATBbits.LATB0 = 1; } while(0);
+    _delay((unsigned long)((1)*(64000000UL/4000000.0)));
+    do { LATBbits.LATB0 = 0; } while(0);
+    _delay((unsigned long)((100)*(64000000UL/4000000.0)));
+}
 
-void SYSTEM_Initialize(void)
-{
-    CLOCK_Initialize();
-    PIN_MANAGER_Initialize();
-    TMR1_Initialize();
-    INTERRUPT_Initialize();
+void LCD_Command(uint8_t cmd) {
+    do { LATBbits.LATB1 = 0; } while(0);
+    LATC = cmd;
+    LCD_EnablePulse();
+    _delay((unsigned long)((2)*(64000000UL/4000.0)));
+}
+
+void LCD_Char(char data) {
+    do { LATBbits.LATB1 = 1; } while(0);
+    LATC = data;
+    LCD_EnablePulse();
+    _delay((unsigned long)((1)*(64000000UL/4000.0)));
+}
+
+void LCD_String(const char *str) {
+    while (*str) {
+        LCD_Char(*str++);
+    }
+}
+
+void LCD_SetCursor(uint8_t row, uint8_t column) {
+    const uint8_t row_offsets[] = {0x00, 0x40, 0x10, 0x50};
+    if (row > 3) row = 3;
+    LCD_Command(0x80 | (row_offsets[row] + column));
+}
+
+void LCD_Clear(void) {
+    LCD_Command(0x01);
+    _delay((unsigned long)((2)*(64000000UL/4000.0)));
+}
+
+void LCD_Init(void) {
+
+    do { LATBbits.LATB1 = 0; } while(0);
+    do { LATBbits.LATB0 = 0; } while(0);
+    _delay((unsigned long)((20)*(64000000UL/4000.0)));
+
+    LCD_Command(0x38);
+    LCD_Command(0x0C);
+    LCD_Command(0x06);
+    LCD_Clear();
 }

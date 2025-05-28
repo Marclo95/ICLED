@@ -27,20 +27,43 @@
  */
 
 // This is a guard condition so that contents of this file are not included
-// more than once.  
-#ifndef XC_HEADER_TEMPLATE_H
-#define	XC_HEADER_TEMPLATE_H
+// more than once. 
 
 #include <xc.h> // include processor files - each processor file is guarded.  
+#include <stdint.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <string.h>
+
+// TODO Insert appropriate #include <>
+
+// TODO Insert C++ class definitions if appropriate
+
+// TODO Insert declarations
+
+// Comment a function and leverage automatic documentation with slash star star
 
 
-void off_leds(void);
-void send_color(uint8_t r, uint8_t g, uint8_t b);
-void ws2812_reset();
-void send_byte(uint8_t byte);
-void send_leds ( void);
-void on_leds ( void);
+#define LCD_DATA_LAT    LATC      // Port de données (DB0-DB7)
+#define LCD_DATA_TRIS   TRISC  // Direction des broches de données
 
+#define LCD_RS_LAT      LATBbits.LATB1
+#define LCD_RS_TRIS     TRISBbits.TRISB1
+
+#define LCD_EN_LAT      LATBbits.LATB0
+#define LCD_EN_TRIS     TRISBbits.TRISB0
+
+// === FONCTIONS ===
+void LCD_Init(void);
+void LCD_Command(uint8_t cmd);
+void LCD_Char(char data);
+void LCD_String(const char *str);
+void LCD_SetCursor(uint8_t row, uint8_t column);
+void LCD_Clear(void);
+
+ 
+// TODO Insert declarations or function prototypes (right here) to leverage 
+// live documentation
 
 #ifdef	__cplusplus
 extern "C" {
@@ -53,5 +76,4 @@ extern "C" {
 }
 #endif /* __cplusplus */
 
-#endif	/* XC_HEADER_TEMPLATE_H */
 

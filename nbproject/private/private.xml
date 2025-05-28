@@ -4,8 +4,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/maserne.SSE/Documents/MPLAB_PFE/STI3958.X/led_driver.c</file>
-            <file>file:/C:/Users/maserne.SSE/Documents/MPLAB_PFE/STI3958.X/led_driver.h</file>
+            <file>file:/C:/Users/maserne.SSE/Documents/MPLAB_PFE/STI3958.X/mcc_generated_files/system/src/pins.c</file>
+            <file>file:/C:/Users/maserne.SSE/Documents/MPLAB_PFE/STI3958.X/main.h</file>
             <file>file:/C:/Users/maserne.SSE/Documents/MPLAB_PFE/STI3958.X/main.c</file>
+            <file>file:/C:/Users/maserne.SSE/Documents/MPLAB_PFE/STI3958.X/mcc_generated_files/system/pins.h</file>
+            <file>file:/C:/Users/maserne.SSE/Documents/MPLAB_PFE/STI3958.X/LCM_S01604DSF.c</file>
+            <file>file:/C:/Users/maserne.SSE/Documents/MPLAB_PFE/STI3958.X/LCMS01604DSF.h</file>
         </group>
     </open-files>
 </project-private>

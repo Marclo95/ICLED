@@ -34,6 +34,9 @@
 
 #include "../pins.h"
 
+void (*BP1_InterruptHandler)(void);
+void (*BP2_InterruptHandler)(void);
+void (*BP3_InterruptHandler)(void);
 
 void PIN_MANAGER_Initialize(void)
 {
@@ -54,15 +57,15 @@ void PIN_MANAGER_Initialize(void)
     TRISx registers
     */
     TRISA = 0xFE;
-    TRISB = 0xDF;
-    TRISC = 0xFF;
+    TRISB = 0xDC;
+    TRISC = 0x0;
 
     /**
     ANSELx registers
     */
-    ANSELA = 0xFE;
-    ANSELB = 0xDF;
-    ANSELC = 0xFF;
+    ANSELA = 0xF0;
+    ANSELB = 0xDC;
+    ANSELC = 0x0;
 
     /**
     WPUx registers
@@ -102,7 +105,7 @@ void PIN_MANAGER_Initialize(void)
    /**
     IOCx registers 
     */
-    IOCAP = 0x0;
+    IOCAP = 0xE;
     IOCAN = 0x0;
     IOCAF = 0x0;
     IOCBP = 0x0;
@@ -115,11 +118,121 @@ void PIN_MANAGER_Initialize(void)
     IOCEN = 0x0;
     IOCEF = 0x0;
 
+    BP1_SetInterruptHandler(BP1_DefaultInterruptHandler);
+    BP2_SetInterruptHandler(BP2_DefaultInterruptHandler);
+    BP3_SetInterruptHandler(BP3_DefaultInterruptHandler);
 
+    // Enable PIE0bits.IOCIE interrupt 
+    PIE0bits.IOCIE = 1; 
 }
   
 void PIN_MANAGER_IOC(void)
 {
+    // interrupt on change for pin BP1
+    if(IOCAFbits.IOCAF1 == 1)
+    {
+        BP1_ISR();  
+    }
+    // interrupt on change for pin BP2
+    if(IOCAFbits.IOCAF2 == 1)
+    {
+        BP2_ISR();  
+    }
+    // interrupt on change for pin BP3
+    if(IOCAFbits.IOCAF3 == 1)
+    {
+        BP3_ISR();  
+    }
+}
+   
+/**
+   BP1 Interrupt Service Routine
+*/
+void BP1_ISR(void) {
+
+    // Add custom BP1 code
+
+    // Call the interrupt handler for the callback registered at runtime
+    if(BP1_InterruptHandler)
+    {
+        BP1_InterruptHandler();
+    }
+    IOCAFbits.IOCAF1 = 0;
+}
+
+/**
+  Allows selecting an interrupt handler for BP1 at application runtime
+*/
+void BP1_SetInterruptHandler(void (* InterruptHandler)(void)){
+    BP1_InterruptHandler = InterruptHandler;
+}
+
+/**
+  Default interrupt handler for BP1
+*/
+void BP1_DefaultInterruptHandler(void){
+    // add your BP1 interrupt custom code
+    // or set custom function using BP1_SetInterruptHandler()
+}
+   
+/**
+   BP2 Interrupt Service Routine
+*/
+void BP2_ISR(void) {
+
+    // Add custom BP2 code
+
+    // Call the interrupt handler for the callback registered at runtime
+    if(BP2_InterruptHandler)
+    {
+        BP2_InterruptHandler();
+    }
+    IOCAFbits.IOCAF2 = 0;
+}
+
+/**
+  Allows selecting an interrupt handler for BP2 at application runtime
+*/
+void BP2_SetInterruptHandler(void (* InterruptHandler)(void)){
+    BP2_InterruptHandler = InterruptHandler;
+}
+
+/**
+  Default interrupt handler for BP2
+*/
+void BP2_DefaultInterruptHandler(void){
+    // add your BP2 interrupt custom code
+    // or set custom function using BP2_SetInterruptHandler()
+}
+   
+/**
+   BP3 Interrupt Service Routine
+*/
+void BP3_ISR(void) {
+
+    // Add custom BP3 code
+
+    // Call the interrupt handler for the callback registered at runtime
+    if(BP3_InterruptHandler)
+    {
+        BP3_InterruptHandler();
+    }
+    IOCAFbits.IOCAF3 = 0;
+}
+
+/**
+  Allows selecting an interrupt handler for BP3 at application runtime
+*/
+void BP3_SetInterruptHandler(void (* InterruptHandler)(void)){
+    BP3_InterruptHandler = InterruptHandler;
+}
+
+/**
+  Default interrupt handler for BP3
+*/
+void BP3_DefaultInterruptHandler(void){
+    // add your BP3 interrupt custom code
+    // or set custom function using BP3_SetInterruptHandler()
 }
 /**
  End of File

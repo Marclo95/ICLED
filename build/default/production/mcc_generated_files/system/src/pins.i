@@ -26158,7 +26158,7 @@ unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 2 3
 # 39 "mcc_generated_files/system/src/../pins.h" 2
-# 98 "mcc_generated_files/system/src/../pins.h"
+# 361 "mcc_generated_files/system/src/../pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -26168,8 +26168,53 @@ void PIN_MANAGER_Initialize (void);
 
 
 void PIN_MANAGER_IOC(void);
+
+
+
+
+
+
+
+void BP1_ISR(void);
+# 387 "mcc_generated_files/system/src/../pins.h"
+void BP1_SetInterruptHandler(void (* InterruptHandler)(void));
+# 398 "mcc_generated_files/system/src/../pins.h"
+extern void (*BP1_InterruptHandler)(void);
+# 409 "mcc_generated_files/system/src/../pins.h"
+void BP1_DefaultInterruptHandler(void);
+
+
+
+
+
+
+
+void BP2_ISR(void);
+# 427 "mcc_generated_files/system/src/../pins.h"
+void BP2_SetInterruptHandler(void (* InterruptHandler)(void));
+# 438 "mcc_generated_files/system/src/../pins.h"
+extern void (*BP2_InterruptHandler)(void);
+# 449 "mcc_generated_files/system/src/../pins.h"
+void BP2_DefaultInterruptHandler(void);
+
+
+
+
+
+
+
+void BP3_ISR(void);
+# 467 "mcc_generated_files/system/src/../pins.h"
+void BP3_SetInterruptHandler(void (* InterruptHandler)(void));
+# 478 "mcc_generated_files/system/src/../pins.h"
+extern void (*BP3_InterruptHandler)(void);
+# 489 "mcc_generated_files/system/src/../pins.h"
+void BP3_DefaultInterruptHandler(void);
 # 36 "mcc_generated_files/system/src/pins.c" 2
 
+void (*BP1_InterruptHandler)(void);
+void (*BP2_InterruptHandler)(void);
+void (*BP3_InterruptHandler)(void);
 
 void PIN_MANAGER_Initialize(void)
 {
@@ -26190,15 +26235,15 @@ void PIN_MANAGER_Initialize(void)
 
 
     TRISA = 0xFE;
-    TRISB = 0xDF;
-    TRISC = 0xFF;
+    TRISB = 0xDC;
+    TRISC = 0x0;
 
 
 
 
-    ANSELA = 0xFE;
-    ANSELB = 0xDF;
-    ANSELC = 0xFF;
+    ANSELA = 0xF0;
+    ANSELB = 0xDC;
+    ANSELC = 0x0;
 
 
 
@@ -26238,7 +26283,7 @@ void PIN_MANAGER_Initialize(void)
 
 
 
-    IOCAP = 0x0;
+    IOCAP = 0xE;
     IOCAN = 0x0;
     IOCAF = 0x0;
     IOCBP = 0x0;
@@ -26251,9 +26296,119 @@ void PIN_MANAGER_Initialize(void)
     IOCEN = 0x0;
     IOCEF = 0x0;
 
+    BP1_SetInterruptHandler(BP1_DefaultInterruptHandler);
+    BP2_SetInterruptHandler(BP2_DefaultInterruptHandler);
+    BP3_SetInterruptHandler(BP3_DefaultInterruptHandler);
 
+
+    PIE0bits.IOCIE = 1;
 }
 
 void PIN_MANAGER_IOC(void)
 {
+
+    if(IOCAFbits.IOCAF1 == 1)
+    {
+        BP1_ISR();
+    }
+
+    if(IOCAFbits.IOCAF2 == 1)
+    {
+        BP2_ISR();
+    }
+
+    if(IOCAFbits.IOCAF3 == 1)
+    {
+        BP3_ISR();
+    }
+}
+
+
+
+
+void BP1_ISR(void) {
+
+
+
+
+    if(BP1_InterruptHandler)
+    {
+        BP1_InterruptHandler();
+    }
+    IOCAFbits.IOCAF1 = 0;
+}
+
+
+
+
+void BP1_SetInterruptHandler(void (* InterruptHandler)(void)){
+    BP1_InterruptHandler = InterruptHandler;
+}
+
+
+
+
+void BP1_DefaultInterruptHandler(void){
+
+
+}
+
+
+
+
+void BP2_ISR(void) {
+
+
+
+
+    if(BP2_InterruptHandler)
+    {
+        BP2_InterruptHandler();
+    }
+    IOCAFbits.IOCAF2 = 0;
+}
+
+
+
+
+void BP2_SetInterruptHandler(void (* InterruptHandler)(void)){
+    BP2_InterruptHandler = InterruptHandler;
+}
+
+
+
+
+void BP2_DefaultInterruptHandler(void){
+
+
+}
+
+
+
+
+void BP3_ISR(void) {
+
+
+
+
+    if(BP3_InterruptHandler)
+    {
+        BP3_InterruptHandler();
+    }
+    IOCAFbits.IOCAF3 = 0;
+}
+
+
+
+
+void BP3_SetInterruptHandler(void (* InterruptHandler)(void)){
+    BP3_InterruptHandler = InterruptHandler;
+}
+
+
+
+
+void BP3_DefaultInterruptHandler(void){
+
+
 }

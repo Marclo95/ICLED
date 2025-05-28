@@ -26203,7 +26203,7 @@ void CLOCK_Initialize(void);
 # 40 "mcc_generated_files/system/src/../../system/config_bits.h" 2
 # 42 "mcc_generated_files/system/src/../../system/system.h" 2
 # 1 "mcc_generated_files/system/src/../../system/../system/pins.h" 1
-# 98 "mcc_generated_files/system/src/../../system/../system/pins.h"
+# 361 "mcc_generated_files/system/src/../../system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -26213,6 +26213,48 @@ void PIN_MANAGER_Initialize (void);
 
 
 void PIN_MANAGER_IOC(void);
+
+
+
+
+
+
+
+void BP1_ISR(void);
+# 387 "mcc_generated_files/system/src/../../system/../system/pins.h"
+void BP1_SetInterruptHandler(void (* InterruptHandler)(void));
+# 398 "mcc_generated_files/system/src/../../system/../system/pins.h"
+extern void (*BP1_InterruptHandler)(void);
+# 409 "mcc_generated_files/system/src/../../system/../system/pins.h"
+void BP1_DefaultInterruptHandler(void);
+
+
+
+
+
+
+
+void BP2_ISR(void);
+# 427 "mcc_generated_files/system/src/../../system/../system/pins.h"
+void BP2_SetInterruptHandler(void (* InterruptHandler)(void));
+# 438 "mcc_generated_files/system/src/../../system/../system/pins.h"
+extern void (*BP2_InterruptHandler)(void);
+# 449 "mcc_generated_files/system/src/../../system/../system/pins.h"
+void BP2_DefaultInterruptHandler(void);
+
+
+
+
+
+
+
+void BP3_ISR(void);
+# 467 "mcc_generated_files/system/src/../../system/../system/pins.h"
+void BP3_SetInterruptHandler(void (* InterruptHandler)(void));
+# 478 "mcc_generated_files/system/src/../../system/../system/pins.h"
+extern void (*BP3_InterruptHandler)(void);
+# 489 "mcc_generated_files/system/src/../../system/../system/pins.h"
+void BP3_DefaultInterruptHandler(void);
 # 43 "mcc_generated_files/system/src/../../system/system.h" 2
 
 
@@ -26370,7 +26412,11 @@ void INTERRUPT_Initialize (void)
 void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
 {
 
-    if(PIE4bits.TMR1IE == 1 && PIR4bits.TMR1IF == 1)
+    if(PIE0bits.IOCIE == 1 && PIR0bits.IOCIF == 1)
+    {
+        PIN_MANAGER_IOC();
+    }
+    else if(PIE4bits.TMR1IE == 1 && PIR4bits.TMR1IF == 1)
     {
         TMR1_OverflowISR();
     }

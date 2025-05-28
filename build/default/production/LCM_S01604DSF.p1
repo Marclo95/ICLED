@@ -1,185 +1,26 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F15661 `(v ~T0 @X0 0 tf ]
-[v F15663 `(v ~T0 @X0 0 tf ]
-[v F15665 `(v ~T0 @X0 0 tf ]
-"45198 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 45198: extern volatile unsigned char LATA __attribute__((address(0x3FBA)));
-[v _LATA `Vuc ~T0 @X0 0 e@16314 ]
-"45310
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 45310: extern volatile unsigned char LATB __attribute__((address(0x3FBB)));
-[v _LATB `Vuc ~T0 @X0 0 e@16315 ]
-"45422
+"45316 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 45316:     struct {
+[s S2074 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S2074 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
+"45326
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 45326:     struct {
+[s S2075 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S2075 . LB0 LB1 LB2 LB3 LB4 LB5 LB6 LB7 ]
+"45315
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 45315: typedef union {
+[u S2073 `S2074 1 `S2075 1 ]
+[n S2073 . . . ]
+"45337
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 45337: extern volatile LATBbits_t LATBbits __attribute__((address(0x3FBB)));
+[v _LATBbits `VS2073 ~T0 @X0 0 e@16315 ]
+[v F205 `(v ~T0 @X0 1 tf1`ul ]
+"20 C:\Program Files\Microchip\xc8\v3.00\pic\include/builtins.h
+[v __delay `JF205 ~T0 @X0 0 e ]
+[p i __delay ]
+"45422 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 45422: extern volatile unsigned char LATC __attribute__((address(0x3FBC)));
 [v _LATC `Vuc ~T0 @X0 0 e@16316 ]
-"7591
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 7591: extern volatile unsigned char ODCONA __attribute__((address(0x3A42)));
-[v _ODCONA `Vuc ~T0 @X0 0 e@14914 ]
-"8211
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 8211: extern volatile unsigned char ODCONB __attribute__((address(0x3A52)));
-[v _ODCONB `Vuc ~T0 @X0 0 e@14930 ]
-"9047
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 9047: extern volatile unsigned char ODCONC __attribute__((address(0x3A62)));
-[v _ODCONC `Vuc ~T0 @X0 0 e@14946 ]
-"45534
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 45534: extern volatile unsigned char TRISA __attribute__((address(0x3FC2)));
-[v _TRISA `Vuc ~T0 @X0 0 e@16322 ]
-"45596
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 45596: extern volatile unsigned char TRISB __attribute__((address(0x3FC3)));
-[v _TRISB `Vuc ~T0 @X0 0 e@16323 ]
-"45658
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 45658: extern volatile unsigned char TRISC __attribute__((address(0x3FC4)));
-[v _TRISC `Vuc ~T0 @X0 0 e@16324 ]
-"7467
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 7467: extern volatile unsigned char ANSELA __attribute__((address(0x3A40)));
-[v _ANSELA `Vuc ~T0 @X0 0 e@14912 ]
-"8087
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 8087: extern volatile unsigned char ANSELB __attribute__((address(0x3A50)));
-[v _ANSELB `Vuc ~T0 @X0 0 e@14928 ]
-"8923
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 8923: extern volatile unsigned char ANSELC __attribute__((address(0x3A60)));
-[v _ANSELC `Vuc ~T0 @X0 0 e@14944 ]
-"7529
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 7529: extern volatile unsigned char WPUA __attribute__((address(0x3A41)));
-[v _WPUA `Vuc ~T0 @X0 0 e@14913 ]
-"8149
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 8149: extern volatile unsigned char WPUB __attribute__((address(0x3A51)));
-[v _WPUB `Vuc ~T0 @X0 0 e@14929 ]
-"8985
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 8985: extern volatile unsigned char WPUC __attribute__((address(0x3A61)));
-[v _WPUC `Vuc ~T0 @X0 0 e@14945 ]
-"9759
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 9759: extern volatile unsigned char WPUE __attribute__((address(0x3A81)));
-[v _WPUE `Vuc ~T0 @X0 0 e@14977 ]
-"7653
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 7653: extern volatile unsigned char SLRCONA __attribute__((address(0x3A43)));
-[v _SLRCONA `Vuc ~T0 @X0 0 e@14915 ]
-"8273
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 8273: extern volatile unsigned char SLRCONB __attribute__((address(0x3A53)));
-[v _SLRCONB `Vuc ~T0 @X0 0 e@14931 ]
-"9109
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 9109: extern volatile unsigned char SLRCONC __attribute__((address(0x3A63)));
-[v _SLRCONC `Vuc ~T0 @X0 0 e@14947 ]
-"7715
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 7715: extern volatile unsigned char INLVLA __attribute__((address(0x3A44)));
-[v _INLVLA `Vuc ~T0 @X0 0 e@14916 ]
-"8335
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 8335: extern volatile unsigned char INLVLB __attribute__((address(0x3A54)));
-[v _INLVLB `Vuc ~T0 @X0 0 e@14932 ]
-"9171
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 9171: extern volatile unsigned char INLVLC __attribute__((address(0x3A64)));
-[v _INLVLC `Vuc ~T0 @X0 0 e@14948 ]
-"9780
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 9780: extern volatile unsigned char INLVLE __attribute__((address(0x3A84)));
-[v _INLVLE `Vuc ~T0 @X0 0 e@14980 ]
-"8707
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 8707: extern volatile unsigned char RB1I2C __attribute__((address(0x3A5A)));
-[v _RB1I2C `Vuc ~T0 @X0 0 e@14938 ]
-"8815
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 8815: extern volatile unsigned char RB2I2C __attribute__((address(0x3A5B)));
-[v _RB2I2C `Vuc ~T0 @X0 0 e@14939 ]
-"9543
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 9543: extern volatile unsigned char RC3I2C __attribute__((address(0x3A6A)));
-[v _RC3I2C `Vuc ~T0 @X0 0 e@14954 ]
-"9651
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 9651: extern volatile unsigned char RC4I2C __attribute__((address(0x3A6B)));
-[v _RC4I2C `Vuc ~T0 @X0 0 e@14955 ]
-"7777
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 7777: extern volatile unsigned char IOCAP __attribute__((address(0x3A45)));
-[v _IOCAP `Vuc ~T0 @X0 0 e@14917 ]
-"7839
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 7839: extern volatile unsigned char IOCAN __attribute__((address(0x3A46)));
-[v _IOCAN `Vuc ~T0 @X0 0 e@14918 ]
-"7901
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 7901: extern volatile unsigned char IOCAF __attribute__((address(0x3A47)));
-[v _IOCAF `Vuc ~T0 @X0 0 e@14919 ]
-"8397
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 8397: extern volatile unsigned char IOCBP __attribute__((address(0x3A55)));
-[v _IOCBP `Vuc ~T0 @X0 0 e@14933 ]
-"8459
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 8459: extern volatile unsigned char IOCBN __attribute__((address(0x3A56)));
-[v _IOCBN `Vuc ~T0 @X0 0 e@14934 ]
-"8521
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 8521: extern volatile unsigned char IOCBF __attribute__((address(0x3A57)));
-[v _IOCBF `Vuc ~T0 @X0 0 e@14935 ]
-"9233
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 9233: extern volatile unsigned char IOCCP __attribute__((address(0x3A65)));
-[v _IOCCP `Vuc ~T0 @X0 0 e@14949 ]
-"9295
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 9295: extern volatile unsigned char IOCCN __attribute__((address(0x3A66)));
-[v _IOCCN `Vuc ~T0 @X0 0 e@14950 ]
-"9357
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 9357: extern volatile unsigned char IOCCF __attribute__((address(0x3A67)));
-[v _IOCCF `Vuc ~T0 @X0 0 e@14951 ]
-"9801
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 9801: extern volatile unsigned char IOCEP __attribute__((address(0x3A85)));
-[v _IOCEP `Vuc ~T0 @X0 0 e@14981 ]
-"9822
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 9822: extern volatile unsigned char IOCEN __attribute__((address(0x3A86)));
-[v _IOCEN `Vuc ~T0 @X0 0 e@14982 ]
-"9843
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 9843: extern volatile unsigned char IOCEF __attribute__((address(0x3A87)));
-[v _IOCEF `Vuc ~T0 @X0 0 e@14983 ]
-[v F15638 `(v ~T0 @X0 0 tf ]
-"387 mcc_generated_files/system/src/../pins.h
-[; ;mcc_generated_files/system/src/../pins.h: 387: void BP1_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _BP1_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F15638 ]
-"409
-[; ;mcc_generated_files/system/src/../pins.h: 409: void BP1_DefaultInterruptHandler(void);
-[v _BP1_DefaultInterruptHandler `(v ~T0 @X0 0 ef ]
-[v F15646 `(v ~T0 @X0 0 tf ]
-"427
-[; ;mcc_generated_files/system/src/../pins.h: 427: void BP2_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _BP2_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F15646 ]
-"449
-[; ;mcc_generated_files/system/src/../pins.h: 449: void BP2_DefaultInterruptHandler(void);
-[v _BP2_DefaultInterruptHandler `(v ~T0 @X0 0 ef ]
-[v F15654 `(v ~T0 @X0 0 tf ]
-"467
-[; ;mcc_generated_files/system/src/../pins.h: 467: void BP3_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _BP3_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F15654 ]
-"489
-[; ;mcc_generated_files/system/src/../pins.h: 489: void BP3_DefaultInterruptHandler(void);
-[v _BP3_DefaultInterruptHandler `(v ~T0 @X0 0 ef ]
-"3336 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 3336:     struct {
-[s S150 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S150 . SWIE HLVDIE OSFIE CSWIE NVMIE SCANIE CRCIE IOCIE ]
-"3335
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 3335: typedef union {
-[u S149 `S150 1 ]
-[n S149 . . ]
-"3347
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 3347: extern volatile PIE0bits_t PIE0bits __attribute__((address(0x3990)));
-[v _PIE0bits `VS149 ~T0 @X0 0 e@14736 ]
-"7907
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 7907:     struct {
-[s S352 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S352 . IOCAF0 IOCAF1 IOCAF2 IOCAF3 IOCAF4 IOCAF5 IOCAF6 IOCAF7 ]
-"7906
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 7906: typedef union {
-[u S351 `S352 1 ]
-[n S351 . . ]
-"7918
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 7918: extern volatile IOCAFbits_t IOCAFbits __attribute__((address(0x3A47)));
-[v _IOCAFbits `VS351 ~T0 @X0 0 e@14919 ]
-"377 mcc_generated_files/system/src/../pins.h
-[; ;mcc_generated_files/system/src/../pins.h: 377: void BP1_ISR(void);
-[v _BP1_ISR `(v ~T0 @X0 0 ef ]
-"417
-[; ;mcc_generated_files/system/src/../pins.h: 417: void BP2_ISR(void);
-[v _BP2_ISR `(v ~T0 @X0 0 ef ]
-"457
-[; ;mcc_generated_files/system/src/../pins.h: 457: void BP3_ISR(void);
-[v _BP3_ISR `(v ~T0 @X0 0 ef ]
-[v F15672 `(v ~T0 @X0 0 tf ]
-[v F15674 `(v ~T0 @X0 0 tf ]
-[v F15676 `(v ~T0 @X0 0 tf ]
-[v F15680 `(v ~T0 @X0 0 tf ]
-[v F15682 `(v ~T0 @X0 0 tf ]
-[v F15684 `(v ~T0 @X0 0 tf ]
-[v F15688 `(v ~T0 @X0 0 tf ]
-[v F15690 `(v ~T0 @X0 0 tf ]
-[v F15692 `(v ~T0 @X0 0 tf ]
 "250 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 250: __asm("STATUS_CSHAD equ 03880h");
 [; <" STATUS_CSHAD equ 03880h ;# ">
@@ -2349,354 +2190,202 @@ Version 4.0 HI-TECH Software Intermediate Code
 "47367
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 47367: __asm("TOSU equ 03FFFh");
 [; <" TOSU equ 03FFFh ;# ">
-"37 mcc_generated_files/system/src/pins.c
-[; ;mcc_generated_files/system/src/pins.c: 37: void (*BP1_InterruptHandler)(void);
-[v _BP1_InterruptHandler `*F15661 ~T0 @X0 1 e ]
-"38
-[; ;mcc_generated_files/system/src/pins.c: 38: void (*BP2_InterruptHandler)(void);
-[v _BP2_InterruptHandler `*F15663 ~T0 @X0 1 e ]
-"39
-[; ;mcc_generated_files/system/src/pins.c: 39: void (*BP3_InterruptHandler)(void);
-[v _BP3_InterruptHandler `*F15665 ~T0 @X0 1 e ]
-"41
-[; ;mcc_generated_files/system/src/pins.c: 41: void PIN_MANAGER_Initialize(void)
-[v _PIN_MANAGER_Initialize `(v ~T0 @X0 1 ef ]
-"42
-[; ;mcc_generated_files/system/src/pins.c: 42: {
+"14 LCM_S01604DSF.c
+[; ;LCM_S01604DSF.c: 14: static void LCD_EnablePulse(void) {
+[v _LCD_EnablePulse `(v ~T0 @X0 1 sf ]
 {
-[e :U _PIN_MANAGER_Initialize ]
+[e :U _LCD_EnablePulse ]
 [f ]
-"46
-[; ;mcc_generated_files/system/src/pins.c: 46:     LATA = 0x0;
-[e = _LATA -> -> 0 `i `uc ]
-"47
-[; ;mcc_generated_files/system/src/pins.c: 47:     LATB = 0x0;
-[e = _LATB -> -> 0 `i `uc ]
-"48
-[; ;mcc_generated_files/system/src/pins.c: 48:     LATC = 0x0;
-[e = _LATC -> -> 0 `i `uc ]
-"52
-[; ;mcc_generated_files/system/src/pins.c: 52:     ODCONA = 0x0;
-[e = _ODCONA -> -> 0 `i `uc ]
-"53
-[; ;mcc_generated_files/system/src/pins.c: 53:     ODCONB = 0x0;
-[e = _ODCONB -> -> 0 `i `uc ]
-"54
-[; ;mcc_generated_files/system/src/pins.c: 54:     ODCONC = 0x0;
-[e = _ODCONC -> -> 0 `i `uc ]
-"59
-[; ;mcc_generated_files/system/src/pins.c: 59:     TRISA = 0xFE;
-[e = _TRISA -> -> 254 `i `uc ]
-"60
-[; ;mcc_generated_files/system/src/pins.c: 60:     TRISB = 0xDC;
-[e = _TRISB -> -> 220 `i `uc ]
-"61
-[; ;mcc_generated_files/system/src/pins.c: 61:     TRISC = 0x0;
-[e = _TRISC -> -> 0 `i `uc ]
-"66
-[; ;mcc_generated_files/system/src/pins.c: 66:     ANSELA = 0xF0;
-[e = _ANSELA -> -> 240 `i `uc ]
-"67
-[; ;mcc_generated_files/system/src/pins.c: 67:     ANSELB = 0xDC;
-[e = _ANSELB -> -> 220 `i `uc ]
-"68
-[; ;mcc_generated_files/system/src/pins.c: 68:     ANSELC = 0x0;
-[e = _ANSELC -> -> 0 `i `uc ]
-"73
-[; ;mcc_generated_files/system/src/pins.c: 73:     WPUA = 0x0;
-[e = _WPUA -> -> 0 `i `uc ]
-"74
-[; ;mcc_generated_files/system/src/pins.c: 74:     WPUB = 0x0;
-[e = _WPUB -> -> 0 `i `uc ]
-"75
-[; ;mcc_generated_files/system/src/pins.c: 75:     WPUC = 0x0;
-[e = _WPUC -> -> 0 `i `uc ]
-"76
-[; ;mcc_generated_files/system/src/pins.c: 76:     WPUE = 0x0;
-[e = _WPUE -> -> 0 `i `uc ]
-"82
-[; ;mcc_generated_files/system/src/pins.c: 82:     SLRCONA = 0xFF;
-[e = _SLRCONA -> -> 255 `i `uc ]
-"83
-[; ;mcc_generated_files/system/src/pins.c: 83:     SLRCONB = 0xFF;
-[e = _SLRCONB -> -> 255 `i `uc ]
-"84
-[; ;mcc_generated_files/system/src/pins.c: 84:     SLRCONC = 0xFF;
-[e = _SLRCONC -> -> 255 `i `uc ]
-"89
-[; ;mcc_generated_files/system/src/pins.c: 89:     INLVLA = 0xFF;
-[e = _INLVLA -> -> 255 `i `uc ]
-"90
-[; ;mcc_generated_files/system/src/pins.c: 90:     INLVLB = 0xFF;
-[e = _INLVLB -> -> 255 `i `uc ]
-"91
-[; ;mcc_generated_files/system/src/pins.c: 91:     INLVLC = 0xFF;
-[e = _INLVLC -> -> 255 `i `uc ]
-"92
-[; ;mcc_generated_files/system/src/pins.c: 92:     INLVLE = 0x8;
-[e = _INLVLE -> -> 8 `i `uc ]
-"97
-[; ;mcc_generated_files/system/src/pins.c: 97:     RB1I2C = 0x0;
-[e = _RB1I2C -> -> 0 `i `uc ]
-"98
-[; ;mcc_generated_files/system/src/pins.c: 98:     RB2I2C = 0x0;
-[e = _RB2I2C -> -> 0 `i `uc ]
-"99
-[; ;mcc_generated_files/system/src/pins.c: 99:     RC3I2C = 0x0;
-[e = _RC3I2C -> -> 0 `i `uc ]
-"100
-[; ;mcc_generated_files/system/src/pins.c: 100:     RC4I2C = 0x0;
-[e = _RC4I2C -> -> 0 `i `uc ]
-"108
-[; ;mcc_generated_files/system/src/pins.c: 108:     IOCAP = 0xE;
-[e = _IOCAP -> -> 14 `i `uc ]
-"109
-[; ;mcc_generated_files/system/src/pins.c: 109:     IOCAN = 0x0;
-[e = _IOCAN -> -> 0 `i `uc ]
-"110
-[; ;mcc_generated_files/system/src/pins.c: 110:     IOCAF = 0x0;
-[e = _IOCAF -> -> 0 `i `uc ]
-"111
-[; ;mcc_generated_files/system/src/pins.c: 111:     IOCBP = 0x0;
-[e = _IOCBP -> -> 0 `i `uc ]
-"112
-[; ;mcc_generated_files/system/src/pins.c: 112:     IOCBN = 0x0;
-[e = _IOCBN -> -> 0 `i `uc ]
-"113
-[; ;mcc_generated_files/system/src/pins.c: 113:     IOCBF = 0x0;
-[e = _IOCBF -> -> 0 `i `uc ]
-"114
-[; ;mcc_generated_files/system/src/pins.c: 114:     IOCCP = 0x0;
-[e = _IOCCP -> -> 0 `i `uc ]
-"115
-[; ;mcc_generated_files/system/src/pins.c: 115:     IOCCN = 0x0;
-[e = _IOCCN -> -> 0 `i `uc ]
-"116
-[; ;mcc_generated_files/system/src/pins.c: 116:     IOCCF = 0x0;
-[e = _IOCCF -> -> 0 `i `uc ]
-"117
-[; ;mcc_generated_files/system/src/pins.c: 117:     IOCEP = 0x0;
-[e = _IOCEP -> -> 0 `i `uc ]
-"118
-[; ;mcc_generated_files/system/src/pins.c: 118:     IOCEN = 0x0;
-[e = _IOCEN -> -> 0 `i `uc ]
-"119
-[; ;mcc_generated_files/system/src/pins.c: 119:     IOCEF = 0x0;
-[e = _IOCEF -> -> 0 `i `uc ]
-"121
-[; ;mcc_generated_files/system/src/pins.c: 121:     BP1_SetInterruptHandler(BP1_DefaultInterruptHandler);
-[e ( _BP1_SetInterruptHandler (1 &U _BP1_DefaultInterruptHandler ]
-"122
-[; ;mcc_generated_files/system/src/pins.c: 122:     BP2_SetInterruptHandler(BP2_DefaultInterruptHandler);
-[e ( _BP2_SetInterruptHandler (1 &U _BP2_DefaultInterruptHandler ]
-"123
-[; ;mcc_generated_files/system/src/pins.c: 123:     BP3_SetInterruptHandler(BP3_DefaultInterruptHandler);
-[e ( _BP3_SetInterruptHandler (1 &U _BP3_DefaultInterruptHandler ]
-"126
-[; ;mcc_generated_files/system/src/pins.c: 126:     PIE0bits.IOCIE = 1;
-[e = . . _PIE0bits 0 7 -> -> 1 `i `uc ]
-"127
-[; ;mcc_generated_files/system/src/pins.c: 127: }
-[e :UE 2200 ]
-}
-"129
-[; ;mcc_generated_files/system/src/pins.c: 129: void PIN_MANAGER_IOC(void)
-[v _PIN_MANAGER_IOC `(v ~T0 @X0 1 ef ]
-"130
-[; ;mcc_generated_files/system/src/pins.c: 130: {
-{
-[e :U _PIN_MANAGER_IOC ]
-[f ]
-"132
-[; ;mcc_generated_files/system/src/pins.c: 132:     if(IOCAFbits.IOCAF1 == 1)
-[e $ ! == -> . . _IOCAFbits 0 1 `i -> 1 `i 2202  ]
-"133
-[; ;mcc_generated_files/system/src/pins.c: 133:     {
-{
-"134
-[; ;mcc_generated_files/system/src/pins.c: 134:         BP1_ISR();
-[e ( _BP1_ISR ..  ]
-"135
-[; ;mcc_generated_files/system/src/pins.c: 135:     }
-}
-[e :U 2202 ]
-"137
-[; ;mcc_generated_files/system/src/pins.c: 137:     if(IOCAFbits.IOCAF2 == 1)
-[e $ ! == -> . . _IOCAFbits 0 2 `i -> 1 `i 2203  ]
-"138
-[; ;mcc_generated_files/system/src/pins.c: 138:     {
-{
-"139
-[; ;mcc_generated_files/system/src/pins.c: 139:         BP2_ISR();
-[e ( _BP2_ISR ..  ]
-"140
-[; ;mcc_generated_files/system/src/pins.c: 140:     }
-}
-[e :U 2203 ]
-"142
-[; ;mcc_generated_files/system/src/pins.c: 142:     if(IOCAFbits.IOCAF3 == 1)
-[e $ ! == -> . . _IOCAFbits 0 3 `i -> 1 `i 2204  ]
-"143
-[; ;mcc_generated_files/system/src/pins.c: 143:     {
-{
-"144
-[; ;mcc_generated_files/system/src/pins.c: 144:         BP3_ISR();
-[e ( _BP3_ISR ..  ]
-"145
-[; ;mcc_generated_files/system/src/pins.c: 145:     }
-}
-[e :U 2204 ]
-"146
-[; ;mcc_generated_files/system/src/pins.c: 146: }
-[e :UE 2201 ]
-}
-"151
-[; ;mcc_generated_files/system/src/pins.c: 151: void BP1_ISR(void) {
-[v _BP1_ISR `(v ~T0 @X0 1 ef ]
-{
-[e :U _BP1_ISR ]
-[f ]
-"156
-[; ;mcc_generated_files/system/src/pins.c: 156:     if(BP1_InterruptHandler)
-[e $ ! != _BP1_InterruptHandler -> -> 0 `i `*F15672 2206  ]
-"157
-[; ;mcc_generated_files/system/src/pins.c: 157:     {
-{
-"158
-[; ;mcc_generated_files/system/src/pins.c: 158:         BP1_InterruptHandler();
-[e ( *U _BP1_InterruptHandler ..  ]
-"159
-[; ;mcc_generated_files/system/src/pins.c: 159:     }
-}
+"15
+[; ;LCM_S01604DSF.c: 15:      do { LATBbits.LATB0 = 1; } while(0);
 [e :U 2206 ]
-"160
-[; ;mcc_generated_files/system/src/pins.c: 160:     IOCAFbits.IOCAF1 = 0;
-[e = . . _IOCAFbits 0 1 -> -> 0 `i `uc ]
-"161
-[; ;mcc_generated_files/system/src/pins.c: 161: }
-[e :UE 2205 ]
-}
-"166
-[; ;mcc_generated_files/system/src/pins.c: 166: void BP1_SetInterruptHandler(void (* InterruptHandler)(void)){
-[v _BP1_SetInterruptHandler `(v ~T0 @X0 1 ef1`*F15674 ]
 {
-[e :U _BP1_SetInterruptHandler ]
-[v _InterruptHandler `*F15676 ~T0 @X0 1 r1 ]
+[e = . . _LATBbits 0 0 -> -> 1 `i `uc ]
+}
+[e :U 2205 ]
+"16
+[; ;LCM_S01604DSF.c: 16:     _delay((unsigned long)((1)*(64000000UL/4000000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 64000000 `ul `d .4000000.0 `ul ]
+"17
+[; ;LCM_S01604DSF.c: 17:     do { LATBbits.LATB0 = 0; } while(0);
+[e :U 2209 ]
+{
+[e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
+}
+[e :U 2208 ]
+"18
+[; ;LCM_S01604DSF.c: 18:     _delay((unsigned long)((100)*(64000000UL/4000000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 64000000 `ul `d .4000000.0 `ul ]
+"19
+[; ;LCM_S01604DSF.c: 19: }
+[e :UE 2203 ]
+}
+"21
+[; ;LCM_S01604DSF.c: 21: void LCD_Command(uint8_t cmd) {
+[v _LCD_Command `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _LCD_Command ]
+[v _cmd `uc ~T0 @X0 1 r1 ]
 [f ]
-"167
-[; ;mcc_generated_files/system/src/pins.c: 167:     BP1_InterruptHandler = InterruptHandler;
-[e = _BP1_InterruptHandler _InterruptHandler ]
-"168
-[; ;mcc_generated_files/system/src/pins.c: 168: }
-[e :UE 2207 ]
-}
-"173
-[; ;mcc_generated_files/system/src/pins.c: 173: void BP1_DefaultInterruptHandler(void){
-[v _BP1_DefaultInterruptHandler `(v ~T0 @X0 1 ef ]
+"22
+[; ;LCM_S01604DSF.c: 22:     do { LATBbits.LATB1 = 0; } while(0);
+[e :U 2213 ]
 {
-[e :U _BP1_DefaultInterruptHandler ]
+[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
+}
+[e :U 2212 ]
+"23
+[; ;LCM_S01604DSF.c: 23:     LATC = cmd;
+[e = _LATC _cmd ]
+"24
+[; ;LCM_S01604DSF.c: 24:     LCD_EnablePulse();
+[e ( _LCD_EnablePulse ..  ]
+"25
+[; ;LCM_S01604DSF.c: 25:     _delay((unsigned long)((2)*(64000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+"26
+[; ;LCM_S01604DSF.c: 26: }
+[e :UE 2210 ]
+}
+"28
+[; ;LCM_S01604DSF.c: 28: void LCD_Char(char data) {
+[v _LCD_Char `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _LCD_Char ]
+[v _data `uc ~T0 @X0 1 r1 ]
 [f ]
-"176
-[; ;mcc_generated_files/system/src/pins.c: 176: }
-[e :UE 2208 ]
-}
-"181
-[; ;mcc_generated_files/system/src/pins.c: 181: void BP2_ISR(void) {
-[v _BP2_ISR `(v ~T0 @X0 1 ef ]
+"29
+[; ;LCM_S01604DSF.c: 29:     do { LATBbits.LATB1 = 1; } while(0);
+[e :U 2217 ]
 {
-[e :U _BP2_ISR ]
+[e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
+}
+[e :U 2216 ]
+"30
+[; ;LCM_S01604DSF.c: 30:     LATC = data;
+[e = _LATC -> _data `uc ]
+"31
+[; ;LCM_S01604DSF.c: 31:     LCD_EnablePulse();
+[e ( _LCD_EnablePulse ..  ]
+"32
+[; ;LCM_S01604DSF.c: 32:     _delay((unsigned long)((1)*(64000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+"33
+[; ;LCM_S01604DSF.c: 33: }
+[e :UE 2214 ]
+}
+"35
+[; ;LCM_S01604DSF.c: 35: void LCD_String(const char *str) {
+[v _LCD_String `(v ~T0 @X0 1 ef1`*Cuc ]
+{
+[e :U _LCD_String ]
+[v _str `*Cuc ~T0 @X0 1 r1 ]
 [f ]
-"186
-[; ;mcc_generated_files/system/src/pins.c: 186:     if(BP2_InterruptHandler)
-[e $ ! != _BP2_InterruptHandler -> -> 0 `i `*F15680 2210  ]
-"187
-[; ;mcc_generated_files/system/src/pins.c: 187:     {
+"36
+[; ;LCM_S01604DSF.c: 36:     while (*str) {
+[e $U 2219  ]
+[e :U 2220 ]
 {
-"188
-[; ;mcc_generated_files/system/src/pins.c: 188:         BP2_InterruptHandler();
-[e ( *U _BP2_InterruptHandler ..  ]
-"189
-[; ;mcc_generated_files/system/src/pins.c: 189:     }
+"37
+[; ;LCM_S01604DSF.c: 37:         LCD_Char(*str++);
+[e ( _LCD_Char (1 *U ++ _str * -> -> 1 `i `x -> -> # *U _str `i `x ]
+"38
+[; ;LCM_S01604DSF.c: 38:     }
 }
-[e :U 2210 ]
-"190
-[; ;mcc_generated_files/system/src/pins.c: 190:     IOCAFbits.IOCAF2 = 0;
-[e = . . _IOCAFbits 0 2 -> -> 0 `i `uc ]
-"191
-[; ;mcc_generated_files/system/src/pins.c: 191: }
-[e :UE 2209 ]
+[e :U 2219 ]
+"36
+[; ;LCM_S01604DSF.c: 36:     while (*str) {
+[e $ != -> *U _str `i -> 0 `i 2220  ]
+[e :U 2221 ]
+"39
+[; ;LCM_S01604DSF.c: 39: }
+[e :UE 2218 ]
 }
-"196
-[; ;mcc_generated_files/system/src/pins.c: 196: void BP2_SetInterruptHandler(void (* InterruptHandler)(void)){
-[v _BP2_SetInterruptHandler `(v ~T0 @X0 1 ef1`*F15682 ]
+"41
+[; ;LCM_S01604DSF.c: 41: void LCD_SetCursor(uint8_t row, uint8_t column) {
+[v _LCD_SetCursor `(v ~T0 @X0 1 ef2`uc`uc ]
 {
-[e :U _BP2_SetInterruptHandler ]
-[v _InterruptHandler `*F15684 ~T0 @X0 1 r1 ]
+[e :U _LCD_SetCursor ]
+[v _row `uc ~T0 @X0 1 r1 ]
+[v _column `uc ~T0 @X0 1 r2 ]
 [f ]
-"197
-[; ;mcc_generated_files/system/src/pins.c: 197:     BP2_InterruptHandler = InterruptHandler;
-[e = _BP2_InterruptHandler _InterruptHandler ]
-"198
-[; ;mcc_generated_files/system/src/pins.c: 198: }
-[e :UE 2211 ]
+[v F16227 `Cuc ~T0 @X0 -> 4 `i s ]
+[i F16227
+:U ..
+"42
+[; ;LCM_S01604DSF.c: 42:     const uint8_t row_offsets[] = {0x00, 0x40, 0x10, 0x50};
+-> -> 0 `i `uc
+-> -> 64 `i `uc
+-> -> 16 `i `uc
+-> -> 80 `i `uc
+..
+]
+[v _row_offsets `Cuc ~T0 @X0 -> 4 `i a ]
+[e = _row_offsets F16227 ]
+"43
+[; ;LCM_S01604DSF.c: 43:     if (row > 3) row = 3;
+[e $ ! > -> _row `i -> 3 `i 2223  ]
+[e = _row -> -> 3 `i `uc ]
+[e :U 2223 ]
+"44
+[; ;LCM_S01604DSF.c: 44:     LCD_Command(0x80 | (row_offsets[row] + column));
+[e ( _LCD_Command (1 -> | -> 128 `i + -> *U + &U _row_offsets * -> _row `ux -> -> # *U &U _row_offsets `ui `ux `i -> _column `i `uc ]
+"45
+[; ;LCM_S01604DSF.c: 45: }
+[e :UE 2222 ]
 }
-"203
-[; ;mcc_generated_files/system/src/pins.c: 203: void BP2_DefaultInterruptHandler(void){
-[v _BP2_DefaultInterruptHandler `(v ~T0 @X0 1 ef ]
+"47
+[; ;LCM_S01604DSF.c: 47: void LCD_Clear(void) {
+[v _LCD_Clear `(v ~T0 @X0 1 ef ]
 {
-[e :U _BP2_DefaultInterruptHandler ]
+[e :U _LCD_Clear ]
 [f ]
-"206
-[; ;mcc_generated_files/system/src/pins.c: 206: }
-[e :UE 2212 ]
+"48
+[; ;LCM_S01604DSF.c: 48:     LCD_Command(0x01);
+[e ( _LCD_Command (1 -> -> 1 `i `uc ]
+"49
+[; ;LCM_S01604DSF.c: 49:     _delay((unsigned long)((2)*(64000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+"50
+[; ;LCM_S01604DSF.c: 50: }
+[e :UE 2224 ]
 }
-"211
-[; ;mcc_generated_files/system/src/pins.c: 211: void BP3_ISR(void) {
-[v _BP3_ISR `(v ~T0 @X0 1 ef ]
+"52
+[; ;LCM_S01604DSF.c: 52: void LCD_Init(void) {
+[v _LCD_Init `(v ~T0 @X0 1 ef ]
 {
-[e :U _BP3_ISR ]
+[e :U _LCD_Init ]
 [f ]
-"216
-[; ;mcc_generated_files/system/src/pins.c: 216:     if(BP3_InterruptHandler)
-[e $ ! != _BP3_InterruptHandler -> -> 0 `i `*F15688 2214  ]
-"217
-[; ;mcc_generated_files/system/src/pins.c: 217:     {
+"54
+[; ;LCM_S01604DSF.c: 54:     do { LATBbits.LATB1 = 0; } while(0);
+[e :U 2228 ]
 {
-"218
-[; ;mcc_generated_files/system/src/pins.c: 218:         BP3_InterruptHandler();
-[e ( *U _BP3_InterruptHandler ..  ]
-"219
-[; ;mcc_generated_files/system/src/pins.c: 219:     }
+[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
 }
-[e :U 2214 ]
-"220
-[; ;mcc_generated_files/system/src/pins.c: 220:     IOCAFbits.IOCAF3 = 0;
-[e = . . _IOCAFbits 0 3 -> -> 0 `i `uc ]
-"221
-[; ;mcc_generated_files/system/src/pins.c: 221: }
-[e :UE 2213 ]
-}
-"226
-[; ;mcc_generated_files/system/src/pins.c: 226: void BP3_SetInterruptHandler(void (* InterruptHandler)(void)){
-[v _BP3_SetInterruptHandler `(v ~T0 @X0 1 ef1`*F15690 ]
+[e :U 2227 ]
+"55
+[; ;LCM_S01604DSF.c: 55:     do { LATBbits.LATB0 = 0; } while(0);
+[e :U 2231 ]
 {
-[e :U _BP3_SetInterruptHandler ]
-[v _InterruptHandler `*F15692 ~T0 @X0 1 r1 ]
-[f ]
-"227
-[; ;mcc_generated_files/system/src/pins.c: 227:     BP3_InterruptHandler = InterruptHandler;
-[e = _BP3_InterruptHandler _InterruptHandler ]
-"228
-[; ;mcc_generated_files/system/src/pins.c: 228: }
-[e :UE 2215 ]
+[e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
 }
-"233
-[; ;mcc_generated_files/system/src/pins.c: 233: void BP3_DefaultInterruptHandler(void){
-[v _BP3_DefaultInterruptHandler `(v ~T0 @X0 1 ef ]
-{
-[e :U _BP3_DefaultInterruptHandler ]
-[f ]
-"236
-[; ;mcc_generated_files/system/src/pins.c: 236: }
-[e :UE 2216 ]
+[e :U 2230 ]
+"56
+[; ;LCM_S01604DSF.c: 56:     _delay((unsigned long)((20)*(64000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+"58
+[; ;LCM_S01604DSF.c: 58:     LCD_Command(0x38);
+[e ( _LCD_Command (1 -> -> 56 `i `uc ]
+"59
+[; ;LCM_S01604DSF.c: 59:     LCD_Command(0x0C);
+[e ( _LCD_Command (1 -> -> 12 `i `uc ]
+"60
+[; ;LCM_S01604DSF.c: 60:     LCD_Command(0x06);
+[e ( _LCD_Command (1 -> -> 6 `i `uc ]
+"61
+[; ;LCM_S01604DSF.c: 61:     LCD_Clear();
+[e ( _LCD_Clear ..  ]
+"62
+[; ;LCM_S01604DSF.c: 62: }
+[e :UE 2225 ]
 }

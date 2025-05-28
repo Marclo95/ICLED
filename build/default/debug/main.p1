@@ -1,21 +1,21 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"51 main.c
-[; ;main.c: 51:         struct {
-[s S2202 `uc 1 `uc 1 `uc 1 ]
-[n S2202 . green red blue ]
-"50
-[; ;main.c: 50:       union{
-[u S2201 `S2202 1 `uc -> 3 `i `um 1 ]
-[n S2201 . . colors color ]
-"49
-[; ;main.c: 49: typedef struct GRB {
-[s S2200 `S2201 1 ]
-[n S2200 GRB . ]
-"41 ./main.h
-[; ;./main.h: 41: void send_color(uint8_t r, uint8_t g, uint8_t b);
+"62 main.c
+[; ;main.c: 62:         struct {
+[s S2205 `uc 1 `uc 1 `uc 1 ]
+[n S2205 . green red blue ]
+"61
+[; ;main.c: 61:       union{
+[u S2204 `S2205 1 `uc -> 3 `i `um 1 ]
+[n S2204 . . colors color ]
+"60
+[; ;main.c: 60: typedef struct GRB {
+[s S2203 `S2204 1 ]
+[n S2203 GRB . ]
+"38 ./main.h
+[; ;./main.h: 38: void send_color(uint8_t r, uint8_t g, uint8_t b);
 [v _send_color `(v ~T0 @X0 0 ef3`uc`uc`uc ]
-"42
-[; ;./main.h: 42: void ws2812_reset();
+"39
+[; ;./main.h: 39: void ws2812_reset();
 [v _ws2812_reset `(v ~T0 @X0 0 e? ]
 "45316 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 45316:     struct {
@@ -36,14 +36,49 @@ Version 4.0 HI-TECH Software Intermediate Code
 "20 C:\Program Files\Microchip\xc8\v3.00\pic\include/builtins.h
 [v __delay `JF205 ~T0 @X0 0 e ]
 [p i __delay ]
+"57 ./LCMS01604DSF.h
+[; ;./LCMS01604DSF.h: 57: void LCD_Init(void);
+[v _LCD_Init `(v ~T0 @X0 0 ef ]
+"62
+[; ;./LCMS01604DSF.h: 62: void LCD_Clear(void);
+[v _LCD_Clear `(v ~T0 @X0 0 ef ]
+"61
+[; ;./LCMS01604DSF.h: 61: void LCD_SetCursor(uint8_t row, uint8_t column);
+[v _LCD_SetCursor `(v ~T0 @X0 0 ef2`uc`uc ]
+"60
+[; ;./LCMS01604DSF.h: 60: void LCD_String(const char *str);
+[v _LCD_String `(v ~T0 @X0 0 ef1`*Cuc ]
+"45726 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 45726:     struct {
+[s S2086 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S2086 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+"45725
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 45725: typedef union {
+[u S2085 `S2086 1 ]
+[n S2085 . . ]
+"45737
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 45737: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x3FCA)));
+[v _PORTAbits `VS2085 ~T0 @X0 0 e@16330 ]
 [p mainexit ]
 "53 ./mcc_generated_files/system/system.h
 [; ;./mcc_generated_files/system/system.h: 53: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-[v F15686 `(v ~T0 @X0 0 tf ]
+[v F15710 `(v ~T0 @X0 0 tf ]
 "347 ./mcc_generated_files/system/../timer/tmr1.h
 [; ;./mcc_generated_files/system/../timer/tmr1.h: 347:  void TMR1_OverflowCallbackRegister(void (* CallbackHandler)(void));
-[v _TMR1_OverflowCallbackRegister `(v ~T0 @X0 0 ef1`*F15686 ]
+[v _TMR1_OverflowCallbackRegister `(v ~T0 @X0 0 ef1`*F15710 ]
+[v F15639 `(v ~T0 @X0 0 tf ]
+"387 ./mcc_generated_files/system/../system/pins.h
+[; ;./mcc_generated_files/system/../system/pins.h: 387: void BP1_SetInterruptHandler(void (* InterruptHandler)(void));
+[v _BP1_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F15639 ]
+[v F15647 `(v ~T0 @X0 0 tf ]
+"427
+[; ;./mcc_generated_files/system/../system/pins.h: 427: void BP2_SetInterruptHandler(void (* InterruptHandler)(void));
+[v _BP2_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F15647 ]
+[v F15655 `(v ~T0 @X0 0 tf ]
+"467
+[; ;./mcc_generated_files/system/../system/pins.h: 467: void BP3_SetInterruptHandler(void (* InterruptHandler)(void));
+[v _BP3_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F15655 ]
 "45933 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 45933:     struct {
 [s S2094 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -2239,235 +2274,314 @@ Version 4.0 HI-TECH Software Intermediate Code
 "47367
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 47367: __asm("TOSU equ 03FFFh");
 [; <" TOSU equ 03FFFh ;# ">
-[v F15715 `S2200 ~T0 @X0 -> 12 `i t ]
-"62 main.c
-[; ;main.c: 62: GRB matrix_tab [12][12];
-[v _matrix_tab `F15715 ~T0 @X0 -> 12 `i e ]
-"64
-[; ;main.c: 64: _Bool flag_start = 0 ;
+[v F16246 `S2203 ~T0 @X0 -> 12 `i t ]
+"74 main.c
+[; ;main.c: 74: GRB matrix_tab [12][12];
+[v _matrix_tab `F16246 ~T0 @X0 -> 12 `i e ]
+"77
+[; ;main.c: 77: _Bool flag_start = 0 ;
 [v _flag_start `a ~T0 @X0 1 e ]
 [i _flag_start
 -> -> 0 `i `a
 ]
-"68
-[; ;main.c: 68: void off_leds(void){
+"80
+[; ;main.c: 80: const GRB COLORS_TAB[] = {
+[v _COLORS_TAB `CS2203 ~T0 @X0 -> 3 `i e ]
+[i _COLORS_TAB
+:U ..
+:U ..
+:U 0
+:U ..
+:U ..
+:U ..
+-> -> 0 `i `uc
+-> -> 100 `i `uc
+-> -> 0 `i `uc
+..
+..
+..
+..
+..
+:U ..
+:U 0
+:U ..
+:U ..
+:U ..
+-> -> 100 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+..
+..
+..
+..
+:U ..
+:U 0
+:U ..
+:U ..
+:U ..
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 100 `i `uc
+..
+..
+..
+..
+..
+..
+]
+"90
+[; ;main.c: 90: void off_leds(void){
 [v _off_leds `(v ~T0 @X0 1 ef ]
 {
 [e :U _off_leds ]
 [f ]
-"69
-[; ;main.c: 69:     uint8_t i = 0;
+"91
+[; ;main.c: 91:     uint8_t i = 0;
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-"70
-[; ;main.c: 70:      uint8_t j = 0;
+"92
+[; ;main.c: 92:      uint8_t j = 0;
 [v _j `uc ~T0 @X0 1 a ]
 [e = _j -> -> 0 `i `uc ]
-"72
-[; ;main.c: 72:     for(i = 0 ; i< 12 ; i++ ){
+"94
+[; ;main.c: 94:     for(i = 0 ; i< 12 ; i++ ){
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 12 `i 2204  ]
-[e $U 2205  ]
-[e :U 2204 ]
-{
-"73
-[; ;main.c: 73:         for(j= 0 ; j< 12 ; j++ ){
-{
-[e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 12 `i 2207  ]
+[e $ < -> _i `i -> 12 `i 2207  ]
 [e $U 2208  ]
 [e :U 2207 ]
 {
-"75
-[; ;main.c: 75:             send_color(matrix_tab[i][j].red = 0,matrix_tab[i][j].green = 0, matrix_tab[i][j].blue = 0);
-[e ( _send_color (3 , , = . . . *U + &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux `ui `ux 0 0 1 -> -> 0 `i `uc = . . . *U + &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux `ui `ux 0 0 0 -> -> 0 `i `uc = . . . *U + &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux `ui `ux 0 0 2 -> -> 0 `i `uc ]
-"76
-[; ;main.c: 76:             ws2812_reset();
-[e ( _ws2812_reset ..  ]
-"77
-[; ;main.c: 77:         }
+"95
+[; ;main.c: 95:         for(j= 0 ; j< 12 ; j++ ){
+{
+[e = _j -> -> 0 `i `uc ]
+[e $ < -> _j `i -> 12 `i 2210  ]
+[e $U 2211  ]
+[e :U 2210 ]
+{
+"96
+[; ;main.c: 96:             matrix_tab[i][j].red = 0;
+[e = . . . *U + &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux `ui `ux 0 0 1 -> -> 0 `i `uc ]
+"97
+[; ;main.c: 97:             matrix_tab[i][j].green = 0;
+[e = . . . *U + &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux `ui `ux 0 0 0 -> -> 0 `i `uc ]
+"98
+[; ;main.c: 98:             matrix_tab[i][j].blue = 0;
+[e = . . . *U + &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux `ui `ux 0 0 2 -> -> 0 `i `uc ]
+"99
+[; ;main.c: 99:         }
 }
 [e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 12 `i 2207  ]
-[e :U 2208 ]
+[e $ < -> _j `i -> 12 `i 2210  ]
+[e :U 2211 ]
 }
-"78
-[; ;main.c: 78:     }
+"100
+[; ;main.c: 100:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 12 `i 2204  ]
-[e :U 2205 ]
+[e $ < -> _i `i -> 12 `i 2207  ]
+[e :U 2208 ]
 }
-"79
-[; ;main.c: 79: }
-[e :UE 2203 ]
+"102
+[; ;main.c: 102: }
+[e :UE 2206 ]
 }
-"82
-[; ;main.c: 82: void on_leds ( void){
+"104
+[; ;main.c: 104: void on_leds(void){
 [v _on_leds `(v ~T0 @X0 1 ef ]
 {
 [e :U _on_leds ]
 [f ]
-"83
-[; ;main.c: 83:     uint8_t i = 0;
+"105
+[; ;main.c: 105:     uint8_t i = 0;
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-"84
-[; ;main.c: 84:      uint8_t j = 0;
+"106
+[; ;main.c: 106:      uint8_t j = 0;
 [v _j `uc ~T0 @X0 1 a ]
 [e = _j -> -> 0 `i `uc ]
-"87
-[; ;main.c: 87:     for(i = 0 ; i< 12 ; i++ ){
+"108
+[; ;main.c: 108:     for(i = 0 ; i< 12 ; i++ ){
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 12 `i 2211  ]
-[e $U 2212  ]
-[e :U 2211 ]
-{
-"88
-[; ;main.c: 88:         for(j= 0 ; j< 12 ; j++ ){
-{
-[e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 12 `i 2214  ]
+[e $ < -> _i `i -> 12 `i 2214  ]
 [e $U 2215  ]
 [e :U 2214 ]
 {
-"89
-[; ;main.c: 89:             send_color(30,20,0);
-[e ( _send_color (3 , , -> -> 30 `i `uc -> -> 20 `i `uc -> -> 0 `i `uc ]
-"91
-[; ;main.c: 91:         }
+"109
+[; ;main.c: 109:         for(j= 0 ; j< 12 ; j++ ){
+{
+[e = _j -> -> 0 `i `uc ]
+[e $ < -> _j `i -> 12 `i 2217  ]
+[e $U 2218  ]
+[e :U 2217 ]
+{
+"110
+[; ;main.c: 110:             matrix_tab[i][j].red = 60;
+[e = . . . *U + &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux `ui `ux 0 0 1 -> -> 60 `i `uc ]
+"111
+[; ;main.c: 111:             matrix_tab[i][j].green = 20;
+[e = . . . *U + &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux `ui `ux 0 0 0 -> -> 20 `i `uc ]
+"112
+[; ;main.c: 112:             matrix_tab[i][j].blue = 0;
+[e = . . . *U + &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux `ui `ux 0 0 2 -> -> 0 `i `uc ]
+"113
+[; ;main.c: 113:         }
 }
 [e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 12 `i 2214  ]
-[e :U 2215 ]
+[e $ < -> _j `i -> 12 `i 2217  ]
+[e :U 2218 ]
 }
-"92
-[; ;main.c: 92:     }
+"114
+[; ;main.c: 114:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 12 `i 2211  ]
-[e :U 2212 ]
+[e $ < -> _i `i -> 12 `i 2214  ]
+[e :U 2215 ]
 }
-"93
-[; ;main.c: 93: }
-[e :UE 2210 ]
+"116
+[; ;main.c: 116: }
+[e :UE 2213 ]
 }
-"95
-[; ;main.c: 95: void TMR1_handler( void){
-[v _TMR1_handler `(v ~T0 @X0 1 ef ]
+"119
+[; ;main.c: 119: void send_leds ( void){
+[v _send_leds `(v ~T0 @X0 1 ef ]
 {
-[e :U _TMR1_handler ]
+[e :U _send_leds ]
 [f ]
-"98
-[; ;main.c: 98:     static uint16_t timer_1s = 0;
-[v F15727 `us ~T0 @X0 1 s timer_1s ]
-[i F15727
--> -> 0 `i `us
-]
-"100
-[; ;main.c: 100:     if( timer_1s ++ > 20){
-[e $ ! > -> ++ F15727 -> -> 1 `i `us `ui -> -> 20 `i `ui 2218  ]
+"120
+[; ;main.c: 120:     uint8_t i = 0;
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+"121
+[; ;main.c: 121:      uint8_t j = 0;
+[v _j `uc ~T0 @X0 1 a ]
+[e = _j -> -> 0 `i `uc ]
+"123
+[; ;main.c: 123:     for(i = 0 ; i< 12 ; i++ ){
 {
-"101
-[; ;main.c: 101:         timer_1s = 0;
-[e = F15727 -> -> 0 `i `us ]
-"102
-[; ;main.c: 102:         flag_start = !flag_start;
-[e = _flag_start -> -> ! != -> _flag_start `i -> 0 `i `i `a ]
-"103
-[; ;main.c: 103:     }
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 12 `i 2221  ]
+[e $U 2222  ]
+[e :U 2221 ]
+{
+"124
+[; ;main.c: 124:         for(j= 0 ; j< 12 ; j++ ){
+{
+[e = _j -> -> 0 `i `uc ]
+[e $ < -> _j `i -> 12 `i 2224  ]
+[e $U 2225  ]
+[e :U 2224 ]
+{
+"125
+[; ;main.c: 125:             send_color(matrix_tab[i][j].red,matrix_tab[i][j].green, matrix_tab[i][j].blue);
+[e ( _send_color (3 , , . . . *U + &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux `ui `ux 0 0 1 . . . *U + &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux `ui `ux 0 0 0 . . . *U + &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux `ui `ux 0 0 2 ]
+"126
+[; ;main.c: 126:         }
 }
-[e :U 2218 ]
-"105
-[; ;main.c: 105: }
-[e :UE 2217 ]
+[e ++ _j -> -> 1 `i `uc ]
+[e $ < -> _j `i -> 12 `i 2224  ]
+[e :U 2225 ]
 }
-"109
-[; ;main.c: 109: void send_bit(uint8_t bit) {
+"127
+[; ;main.c: 127:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 12 `i 2221  ]
+[e :U 2222 ]
+}
+"128
+[; ;main.c: 128:      ws2812_reset();
+[e ( _ws2812_reset ..  ]
+"129
+[; ;main.c: 129: }
+[e :UE 2220 ]
+}
+"134
+[; ;main.c: 134: void send_bit(uint8_t bit) {
 [v _send_bit `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _send_bit ]
 [v _bit `uc ~T0 @X0 1 r1 ]
 [f ]
-"110
-[; ;main.c: 110:     if (bit) {
-[e $ ! != -> _bit `i -> 0 `i 2220  ]
+"135
+[; ;main.c: 135:     if (bit) {
+[e $ ! != -> _bit `i -> 0 `i 2228  ]
 {
-"111
-[; ;main.c: 111:         LATBbits.LATB5 = 1;
+"136
+[; ;main.c: 136:         LATBbits.LATB5 = 1;
 [e = . . _LATBbits 0 5 -> -> 1 `i `uc ]
-"112
-[; ;main.c: 112:         _delay((unsigned long)((0.7)*(64000000UL/4000000.0)));
+"137
+[; ;main.c: 137:         _delay((unsigned long)((0.7)*(64000000U/4000000.0)));
 [e ( __delay (1 -> * .0.7 / -> -> 64000000 `ul `d .4000000.0 `ul ]
-"113
-[; ;main.c: 113:         LATBbits.LATB5 = 0;
+"138
+[; ;main.c: 138:         LATBbits.LATB5 = 0;
 [e = . . _LATBbits 0 5 -> -> 0 `i `uc ]
-"114
-[; ;main.c: 114:         _delay((unsigned long)((0.6)*(64000000UL/4000000.0)));
+"139
+[; ;main.c: 139:         _delay((unsigned long)((0.6)*(64000000U/4000000.0)));
 [e ( __delay (1 -> * .0.6 / -> -> 64000000 `ul `d .4000000.0 `ul ]
-"115
-[; ;main.c: 115:     } else {
+"140
+[; ;main.c: 140:     } else {
 }
-[e $U 2221  ]
-[e :U 2220 ]
+[e $U 2229  ]
+[e :U 2228 ]
 {
-"116
-[; ;main.c: 116:         LATBbits.LATB5 = 1;
+"141
+[; ;main.c: 141:         LATBbits.LATB5 = 1;
 [e = . . _LATBbits 0 5 -> -> 1 `i `uc ]
-"117
-[; ;main.c: 117:         _delay((unsigned long)((0.35)*(64000000UL/4000000.0)));
+"142
+[; ;main.c: 142:         _delay((unsigned long)((0.35)*(64000000U/4000000.0)));
 [e ( __delay (1 -> * .0.35 / -> -> 64000000 `ul `d .4000000.0 `ul ]
-"118
-[; ;main.c: 118:         LATBbits.LATB5 = 0;
+"143
+[; ;main.c: 143:         LATBbits.LATB5 = 0;
 [e = . . _LATBbits 0 5 -> -> 0 `i `uc ]
-"119
-[; ;main.c: 119:         _delay((unsigned long)((0.8)*(64000000UL/4000000.0)));
+"144
+[; ;main.c: 144:         _delay((unsigned long)((0.8)*(64000000U/4000000.0)));
 [e ( __delay (1 -> * .0.8 / -> -> 64000000 `ul `d .4000000.0 `ul ]
-"120
-[; ;main.c: 120:     }
+"145
+[; ;main.c: 145:     }
 }
-[e :U 2221 ]
-"121
-[; ;main.c: 121: }
-[e :UE 2219 ]
+[e :U 2229 ]
+"146
+[; ;main.c: 146: }
+[e :UE 2227 ]
 }
-"123
-[; ;main.c: 123: void send_byte(uint8_t byte) {
+"148
+[; ;main.c: 148: void send_byte(uint8_t byte) {
 [v _send_byte `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _send_byte ]
 [v _byte `uc ~T0 @X0 1 r1 ]
 [f ]
-"124
-[; ;main.c: 124:     for (uint8_t i = 0; i < 8; i++) {
+"149
+[; ;main.c: 149:     for (uint8_t i = 0; i < 8; i++) {
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 8 `i 2223  ]
-[e $U 2224  ]
-[e :U 2223 ]
+[e $ < -> _i `i -> 8 `i 2231  ]
+[e $U 2232  ]
+[e :U 2231 ]
 {
-"125
-[; ;main.c: 125:         send_bit(byte & 0x80);
+"150
+[; ;main.c: 150:         send_bit(byte & 0x80);
 [e ( _send_bit (1 -> & -> _byte `i -> 128 `i `uc ]
-"126
-[; ;main.c: 126:         byte <<= 1;
+"151
+[; ;main.c: 151:         byte <<= 1;
 [e =<< _byte -> -> 1 `i `uc ]
-"127
-[; ;main.c: 127:     }
+"152
+[; ;main.c: 152:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 8 `i 2223  ]
-[e :U 2224 ]
+[e $ < -> _i `i -> 8 `i 2231  ]
+[e :U 2232 ]
 }
-"128
-[; ;main.c: 128: }
-[e :UE 2222 ]
+"153
+[; ;main.c: 153: }
+[e :UE 2230 ]
 }
-"130
-[; ;main.c: 130: void send_color(uint8_t r, uint8_t g, uint8_t b) {
+"155
+[; ;main.c: 155: void send_color(uint8_t r, uint8_t g, uint8_t b) {
 [v _send_color `(v ~T0 @X0 1 ef3`uc`uc`uc ]
 {
 [e :U _send_color ]
@@ -2475,96 +2589,444 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _g `uc ~T0 @X0 1 r2 ]
 [v _b `uc ~T0 @X0 1 r3 ]
 [f ]
-"131
-[; ;main.c: 131:     send_byte(g);
+"156
+[; ;main.c: 156:     send_byte(g);
 [e ( _send_byte (1 _g ]
-"132
-[; ;main.c: 132:     send_byte(r);
+"157
+[; ;main.c: 157:     send_byte(r);
 [e ( _send_byte (1 _r ]
-"133
-[; ;main.c: 133:     send_byte(b);
+"158
+[; ;main.c: 158:     send_byte(b);
 [e ( _send_byte (1 _b ]
-"134
-[; ;main.c: 134: }
-[e :UE 2226 ]
+"159
+[; ;main.c: 159: }
+[e :UE 2234 ]
 }
-"136
-[; ;main.c: 136: void ws2812_reset() {
+"161
+[; ;main.c: 161: void ws2812_reset() {
 [v _ws2812_reset `(v ~T0 @X0 1 ef ]
 {
 [e :U _ws2812_reset ]
 [f ]
-"137
-[; ;main.c: 137:     LATBbits.LATB5 = 0;
+"162
+[; ;main.c: 162:     LATBbits.LATB5 = 0;
 [e = . . _LATBbits 0 5 -> -> 0 `i `uc ]
-"138
-[; ;main.c: 138:     _delay((unsigned long)((80)*(64000000UL/4000000.0)));
+"163
+[; ;main.c: 163:     _delay((unsigned long)((80)*(64000000U/4000000.0)));
 [e ( __delay (1 -> * -> -> 80 `i `d / -> -> 64000000 `ul `d .4000000.0 `ul ]
-"139
-[; ;main.c: 139: }
-[e :UE 2227 ]
+"164
+[; ;main.c: 164: }
+[e :UE 2235 ]
+}
+"166
+[; ;main.c: 166: void afficher_couleur_nom(void) {
+[v _afficher_couleur_nom `(v ~T0 @X0 1 ef ]
+{
+[e :U _afficher_couleur_nom ]
+[f ]
+"167
+[; ;main.c: 167:     LCD_Init();
+[e ( _LCD_Init ..  ]
+"168
+[; ;main.c: 168:     LCD_Clear();
+[e ( _LCD_Clear ..  ]
+"169
+[; ;main.c: 169:     LCD_SetCursor(0, 0);
+[e ( _LCD_SetCursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+"171
+[; ;main.c: 171:     uint8_t r = matrix_tab[0][0].red;
+[v _r `uc ~T0 @X0 1 a ]
+[e = _r . . . *U + &U *U + &U _matrix_tab * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _matrix_tab * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux `ui `ux 0 0 1 ]
+"172
+[; ;main.c: 172:     uint8_t g = matrix_tab[0][0].green;
+[v _g `uc ~T0 @X0 1 a ]
+[e = _g . . . *U + &U *U + &U _matrix_tab * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _matrix_tab * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux `ui `ux 0 0 0 ]
+"173
+[; ;main.c: 173:     uint8_t b = matrix_tab[0][0].blue;
+[v _b `uc ~T0 @X0 1 a ]
+[e = _b . . . *U + &U *U + &U _matrix_tab * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _matrix_tab * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux `ui `ux 0 0 2 ]
+"175
+[; ;main.c: 175:     if (r > g && r > b && r > 0) {
+[e $ ! && && > -> _r `i -> _g `i > -> _r `i -> _b `i > -> _r `i -> 0 `i 2237  ]
+{
+"176
+[; ;main.c: 176:         LCD_String("ROUGE");
+[e ( _LCD_String (1 :s 1C ]
+"177
+[; ;main.c: 177:     } else if (g > r && g > b && g > 0) {
+}
+[e $U 2238  ]
+[e :U 2237 ]
+[e $ ! && && > -> _g `i -> _r `i > -> _g `i -> _b `i > -> _g `i -> 0 `i 2239  ]
+{
+"178
+[; ;main.c: 178:         LCD_String("VERT");
+[e ( _LCD_String (1 :s 2C ]
+"179
+[; ;main.c: 179:     } else if (b > r && b > g && b > 0) {
+}
+[e $U 2240  ]
+[e :U 2239 ]
+[e $ ! && && > -> _b `i -> _r `i > -> _b `i -> _g `i > -> _b `i -> 0 `i 2241  ]
+{
+"180
+[; ;main.c: 180:         LCD_String("BLEU");
+[e ( _LCD_String (1 :s 3C ]
+"181
+[; ;main.c: 181:     } else if (r == 0 && g == 0 && b == 0) {
+}
+[e $U 2242  ]
+[e :U 2241 ]
+[e $ ! && && == -> _r `i -> 0 `i == -> _g `i -> 0 `i == -> _b `i -> 0 `i 2243  ]
+{
+"182
+[; ;main.c: 182:         LCD_String("ETEINT");
+[e ( _LCD_String (1 :s 4C ]
+"183
+[; ;main.c: 183:     } else {
+}
+[e $U 2244  ]
+[e :U 2243 ]
+{
+"184
+[; ;main.c: 184:         LCD_String("MELANGE");
+[e ( _LCD_String (1 :s 5C ]
+"185
+[; ;main.c: 185:     }
+}
+[e :U 2244 ]
+[e :U 2242 ]
+[e :U 2240 ]
+[e :U 2238 ]
+"186
+[; ;main.c: 186: }
+[e :UE 2236 ]
+}
+"192
+[; ;main.c: 192: void int_BP1(void)
+[v _int_BP1 `(v ~T0 @X0 1 ef ]
+"193
+[; ;main.c: 193: {
+{
+[e :U _int_BP1 ]
+[f ]
+"194
+[; ;main.c: 194:     _delay((unsigned long)((40)*(64000000U/4000.0)));
+[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+"196
+[; ;main.c: 196:     uint8_t held = 1;
+[v _held `uc ~T0 @X0 1 a ]
+[e = _held -> -> 1 `i `uc ]
+"199
+[; ;main.c: 199:     for (uint8_t i = 0; i < 100; i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 100 `i 2246  ]
+[e $U 2247  ]
+[e :U 2246 ]
+{
+"200
+[; ;main.c: 200:         if (!PORTAbits.RA1) {
+[e $ ! ! != -> . . _PORTAbits 0 1 `i -> 0 `i 2249  ]
+{
+"201
+[; ;main.c: 201:             held = 0;
+[e = _held -> -> 0 `i `uc ]
+"202
+[; ;main.c: 202:             break;
+[e $U 2247  ]
+"203
+[; ;main.c: 203:         }
+}
+[e :U 2249 ]
+"204
+[; ;main.c: 204:         _delay((unsigned long)((10)*(64000000U/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+"205
+[; ;main.c: 205:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 100 `i 2246  ]
+[e :U 2247 ]
+}
+"207
+[; ;main.c: 207:     if (held) {
+[e $ ! != -> _held `i -> 0 `i 2250  ]
+{
+"208
+[; ;main.c: 208:         off_leds();
+[e ( _off_leds ..  ]
+"209
+[; ;main.c: 209:     } else {
+}
+[e $U 2251  ]
+[e :U 2250 ]
+{
+"211
+[; ;main.c: 211:         for (uint8_t i = 0; i < 12; i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 12 `i 2252  ]
+[e $U 2253  ]
+[e :U 2252 ]
+{
+"212
+[; ;main.c: 212:             for (uint8_t j = 0; j < 12; j++) {
+{
+[v _j `uc ~T0 @X0 1 a ]
+[e = _j -> -> 0 `i `uc ]
+[e $ < -> _j `i -> 12 `i 2255  ]
+[e $U 2256  ]
+[e :U 2255 ]
+{
+"213
+[; ;main.c: 213:                 matrix_tab[i][j].red = 0;
+[e = . . . *U + &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux `ui `ux 0 0 1 -> -> 0 `i `uc ]
+"214
+[; ;main.c: 214:                 matrix_tab[i][j].green = 100;
+[e = . . . *U + &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux `ui `ux 0 0 0 -> -> 100 `i `uc ]
+"215
+[; ;main.c: 215:                 matrix_tab[i][j].blue = 0;
+[e = . . . *U + &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux `ui `ux 0 0 2 -> -> 0 `i `uc ]
+"216
+[; ;main.c: 216:             }
+}
+[e ++ _j -> -> 1 `i `uc ]
+[e $ < -> _j `i -> 12 `i 2255  ]
+[e :U 2256 ]
+}
+"217
+[; ;main.c: 217:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 12 `i 2252  ]
+[e :U 2253 ]
+}
+"218
+[; ;main.c: 218:     }
+}
+[e :U 2251 ]
+"220
+[; ;main.c: 220:     send_leds();
+[e ( _send_leds ..  ]
+"221
+[; ;main.c: 221:     afficher_couleur_nom();
+[e ( _afficher_couleur_nom ..  ]
+"222
+[; ;main.c: 222: }
+[e :UE 2245 ]
+}
+"225
+[; ;main.c: 225: void int_BP2(void)
+[v _int_BP2 `(v ~T0 @X0 1 ef ]
+"226
+[; ;main.c: 226: {
+{
+[e :U _int_BP2 ]
+[f ]
+"227
+[; ;main.c: 227:      _delay((unsigned long)((40)*(64000000U/4000.0)));
+[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+"230
+[; ;main.c: 230:     for (uint8_t i = 0; i < 12; i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 12 `i 2259  ]
+[e $U 2260  ]
+[e :U 2259 ]
+{
+"231
+[; ;main.c: 231:         for (uint8_t j = 0; j < 12; j++) {
+{
+[v _j `uc ~T0 @X0 1 a ]
+[e = _j -> -> 0 `i `uc ]
+[e $ < -> _j `i -> 12 `i 2262  ]
+[e $U 2263  ]
+[e :U 2262 ]
+{
+"232
+[; ;main.c: 232:             matrix_tab[i][j].red = 0;
+[e = . . . *U + &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux `ui `ux 0 0 1 -> -> 0 `i `uc ]
+"233
+[; ;main.c: 233:             matrix_tab[i][j].green = 0;
+[e = . . . *U + &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux `ui `ux 0 0 0 -> -> 0 `i `uc ]
+"234
+[; ;main.c: 234:             matrix_tab[i][j].blue = 100;
+[e = . . . *U + &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux `ui `ux 0 0 2 -> -> 100 `i `uc ]
+"235
+[; ;main.c: 235:         }
+}
+[e ++ _j -> -> 1 `i `uc ]
+[e $ < -> _j `i -> 12 `i 2262  ]
+[e :U 2263 ]
+}
+"236
+[; ;main.c: 236:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 12 `i 2259  ]
+[e :U 2260 ]
+}
+"238
+[; ;main.c: 238:     send_leds();
+[e ( _send_leds ..  ]
+"239
+[; ;main.c: 239:     afficher_couleur_nom();
+[e ( _afficher_couleur_nom ..  ]
+"240
+[; ;main.c: 240: }
+[e :UE 2258 ]
+}
+"241
+[; ;main.c: 241: void int_BP3(void)
+[v _int_BP3 `(v ~T0 @X0 1 ef ]
+"242
+[; ;main.c: 242: {
+{
+[e :U _int_BP3 ]
+[f ]
+"243
+[; ;main.c: 243:      _delay((unsigned long)((40)*(64000000U/4000.0)));
+[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+"246
+[; ;main.c: 246:     for (uint8_t i = 0; i < 12; i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 12 `i 2266  ]
+[e $U 2267  ]
+[e :U 2266 ]
+{
+"247
+[; ;main.c: 247:         for (uint8_t j = 0; j < 12; j++) {
+{
+[v _j `uc ~T0 @X0 1 a ]
+[e = _j -> -> 0 `i `uc ]
+[e $ < -> _j `i -> 12 `i 2269  ]
+[e $U 2270  ]
+[e :U 2269 ]
+{
+"248
+[; ;main.c: 248:             matrix_tab[i][j].red = 100;
+[e = . . . *U + &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux `ui `ux 0 0 1 -> -> 100 `i `uc ]
+"249
+[; ;main.c: 249:             matrix_tab[i][j].green = 0;
+[e = . . . *U + &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux `ui `ux 0 0 0 -> -> 0 `i `uc ]
+"250
+[; ;main.c: 250:             matrix_tab[i][j].blue = 0;
+[e = . . . *U + &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _matrix_tab * -> _i `ux -> * -> # *U &U *U &U _matrix_tab `ui -> -> 12 `i `ui `ux `ui `ux 0 0 2 -> -> 0 `i `uc ]
+"251
+[; ;main.c: 251:         }
+}
+[e ++ _j -> -> 1 `i `uc ]
+[e $ < -> _j `i -> 12 `i 2269  ]
+[e :U 2270 ]
+}
+"252
+[; ;main.c: 252:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 12 `i 2266  ]
+[e :U 2267 ]
+}
+"254
+[; ;main.c: 254:     send_leds();
+[e ( _send_leds ..  ]
+"255
+[; ;main.c: 255:     afficher_couleur_nom();
+[e ( _afficher_couleur_nom ..  ]
+"256
+[; ;main.c: 256: }
+[e :UE 2265 ]
+}
+"261
+[; ;main.c: 261: void TMR1_handler( void){
+[v _TMR1_handler `(v ~T0 @X0 1 ef ]
+{
+[e :U _TMR1_handler ]
+[f ]
+"264
+[; ;main.c: 264:     static uint16_t timer_1s = 0;
+[v F16305 `us ~T0 @X0 1 s timer_1s ]
+[i F16305
+-> -> 0 `i `us
+]
+"266
+[; ;main.c: 266:     if( timer_1s ++ > 20){
+[e $ ! > -> ++ F16305 -> -> 1 `i `us `ui -> -> 20 `i `ui 2273  ]
+{
+"267
+[; ;main.c: 267:         timer_1s = 0;
+[e = F16305 -> -> 0 `i `us ]
+"268
+[; ;main.c: 268:         flag_start = !flag_start;
+[e = _flag_start -> -> ! != -> _flag_start `i -> 0 `i `i `a ]
+"269
+[; ;main.c: 269:     }
+}
+[e :U 2273 ]
+"271
+[; ;main.c: 271: }
+[e :UE 2272 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"141
-[; ;main.c: 141: int main(void) {
+"276
+[; ;main.c: 276: int main(void) {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"143
-[; ;main.c: 143:     SYSTEM_Initialize();
+"278
+[; ;main.c: 278:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"145
-[; ;main.c: 145:     TMR1_OverflowCallbackRegister(TMR1_handler);
+"280
+[; ;main.c: 280:     TMR1_OverflowCallbackRegister(TMR1_handler);
 [e ( _TMR1_OverflowCallbackRegister (1 &U _TMR1_handler ]
-"147
-[; ;main.c: 147:     (INTCON0bits.GIE = 1);
+"282
+[; ;main.c: 282:    BP1_SetInterruptHandler(int_BP1);
+[e ( _BP1_SetInterruptHandler (1 &U _int_BP1 ]
+"283
+[; ;main.c: 283:    BP2_SetInterruptHandler(int_BP2);
+[e ( _BP2_SetInterruptHandler (1 &U _int_BP2 ]
+"284
+[; ;main.c: 284:    BP3_SetInterruptHandler(int_BP3);
+[e ( _BP3_SetInterruptHandler (1 &U _int_BP3 ]
+"286
+[; ;main.c: 286:     (INTCON0bits.GIE = 1);
 [e = . . _INTCON0bits 0 6 -> -> 1 `i `uc ]
-"148
-[; ;main.c: 148:     TRISBbits.TRISB5 = 0;
+"287
+[; ;main.c: 287:     TRISBbits.TRISB5 = 0;
 [e = . . _TRISBbits 0 5 -> -> 0 `i `uc ]
-"149
-[; ;main.c: 149:     LATBbits.LATB5 = 0;
+"288
+[; ;main.c: 288:     LATBbits.LATB5 = 0;
 [e = . . _LATBbits 0 5 -> -> 0 `i `uc ]
-"151
-[; ;main.c: 151:     uint8_t position = 0;
-[v _position `uc ~T0 @X0 1 a ]
-[e = _position -> -> 0 `i `uc ]
-"153
-[; ;main.c: 153:     while(1) {
-[e :U 2230 ]
+"296
+[; ;main.c: 296:     uint8_t frame = 0;
+[v _frame `uc ~T0 @X0 1 a ]
+[e = _frame -> -> 0 `i `uc ]
+"298
+[; ;main.c: 298:     while(1) {
+[e :U 2276 ]
 {
-"155
-[; ;main.c: 155:         if( flag_start == 1){
-[e $ ! == -> _flag_start `i -> 1 `i 2232  ]
-{
-"156
-[; ;main.c: 156:             on_leds();
-[e ( _on_leds ..  ]
-"157
-[; ;main.c: 157:         }else{
+"373
+[; ;main.c: 373:     }
 }
-[e $U 2233  ]
-[e :U 2232 ]
-{
-"158
-[; ;main.c: 158:             off_leds();
-[e ( _off_leds ..  ]
-"159
-[; ;main.c: 159:         }
-}
-[e :U 2233 ]
-"217
-[; ;main.c: 217:     }
-}
-[e :U 2229 ]
-[e $U 2230  ]
-[e :U 2231 ]
-"219
-[; ;main.c: 219:     return 0;
+[e :U 2275 ]
+[e $U 2276  ]
+[e :U 2277 ]
+"375
+[; ;main.c: 375:     return 0;
 [e ) -> 0 `i ]
-[e $UE 2228  ]
-"220
-[; ;main.c: 220: }
-[e :UE 2228 ]
+[e $UE 2274  ]
+"376
+[; ;main.c: 376: }
+[e :UE 2274 ]
 }
+[a 3C 66 76 69 85 0 ]
+[a 2C 86 69 82 84 0 ]
+[a 4C 69 84 69 73 78 84 0 ]
+[a 1C 82 79 85 71 69 0 ]
+[a 5C 77 69 76 65 78 71 69 0 ]
