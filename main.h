@@ -40,6 +40,8 @@ void ws2812_reset();
 void send_byte(uint8_t byte);
 void send_leds ( void);
 void on_leds ( void);
+void LCD_UpdateMenu(void);
+void appliquer_action(void);
 
 
 #ifdef	__cplusplus

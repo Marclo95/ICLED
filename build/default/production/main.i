@@ -26600,6 +26600,8 @@ void ws2812_reset();
 void send_byte(uint8_t byte);
 void send_leds ( void);
 void on_leds ( void);
+void LCD_UpdateMenu(void);
+void appliquer_action(void);
 # 44 "main.c" 2
 # 1 "./led_driver.h" 1
 # 37 "./led_driver.h"
@@ -26622,6 +26624,58 @@ typedef struct GRB {
     };
 }GRB ;
 
+typedef enum {
+    MENU_PRINCIPAL,
+    MENU_ICLED,
+    MENU_COURANT,
+    ICLED_COULEUR1,
+    ICLED_COULEUR2,
+    ICLED_COULEUR3,
+    MESURE_COURANT
+} EtatMenu;
+
+EtatMenu etat_courant = MENU_PRINCIPAL;
+
+
+
+
+
+void LCD_UpdateMenu(void) {
+    LCD_Init();
+    LCD_Clear();
+    switch (etat_courant) {
+        case MENU_PRINCIPAL:
+            LCD_SetCursor(0,0); LCD_String("Choix:");
+            LCD_SetCursor(1,0); LCD_String("1.ICLED 2.Mesure");
+            break;
+
+        case MENU_ICLED:
+            LCD_SetCursor(0,0); LCD_String("LED:");
+            LCD_SetCursor(1,0); LCD_String("1.R 2.G 3.B");
+            break;
+
+        case MENU_COURANT:
+            LCD_SetCursor(0,0); LCD_String("Mesure courant");
+            break;
+
+        case ICLED_COULEUR1:
+            LCD_SetCursor(0,0); LCD_String("Couleur: ROUGE");
+            break;
+
+        case ICLED_COULEUR2:
+            LCD_SetCursor(0,0); LCD_String("Couleur: VERT");
+            break;
+
+        case ICLED_COULEUR3:
+            LCD_SetCursor(0,0); LCD_String("Couleur: BLEU");
+            break;
+
+        case MESURE_COURANT:
+            LCD_SetCursor(0,0); LCD_String("Courant:");
+
+            break;
+    }
+}
 
 GRB matrix_tab [12][12];
 
@@ -26715,96 +26769,76 @@ void ws2812_reset() {
     _delay((unsigned long)((80)*(64000000U/4000000.0)));
 }
 
-void afficher_couleur_nom(void) {
-    LCD_Init();
-    LCD_Clear();
-    LCD_SetCursor(0, 0);
-
-    uint8_t r = matrix_tab[0][0].red;
-    uint8_t g = matrix_tab[0][0].green;
-    uint8_t b = matrix_tab[0][0].blue;
-
-    if (r > g && r > b && r > 0) {
-        LCD_String("ROUGE");
-    } else if (g > r && g > b && g > 0) {
-        LCD_String("VERT");
-    } else if (b > r && b > g && b > 0) {
-        LCD_String("BLEU");
-    } else if (r == 0 && g == 0 && b == 0) {
-        LCD_String("ETEINT");
-    } else {
-        LCD_String("MELANGE");
-    }
-}
 
 
 
 
-
-void int_BP1(void)
-{
+void int_BP1(void) {
     _delay((unsigned long)((40)*(64000000U/4000.0)));
 
-    uint8_t held = 1;
-
-
-    for (uint8_t i = 0; i < 100; i++) {
-        if (!PORTAbits.RA1) {
-            held = 0;
+    switch (etat_courant) {
+        case MENU_PRINCIPAL:
+            etat_courant = MENU_ICLED;
             break;
-        }
-        _delay((unsigned long)((10)*(64000000U/4000.0)));
+        case MENU_ICLED:
+            etat_courant = MENU_PRINCIPAL;
+            break;
+        case MENU_COURANT:
+            etat_courant = MENU_PRINCIPAL;
+            break;
+        default:
+            etat_courant = MENU_PRINCIPAL;
+            break;
+    }
+    LCD_UpdateMenu();
+}
+
+void int_BP2(void) {
+    _delay((unsigned long)((40)*(64000000U/4000.0)));
+
+    if (etat_courant == MENU_ICLED) {
+        etat_courant = ICLED_COULEUR1;
+    } else if (etat_courant == ICLED_COULEUR1) {
+        etat_courant = ICLED_COULEUR2;
+    } else if (etat_courant == ICLED_COULEUR2) {
+        etat_courant = ICLED_COULEUR3;
+    } else if (etat_courant == ICLED_COULEUR3) {
+        etat_courant = ICLED_COULEUR1;
+    } else if (etat_courant == MENU_PRINCIPAL) {
+        etat_courant = MENU_COURANT;
     }
 
-    if (held) {
-        off_leds();
-    } else {
-
-        for (uint8_t i = 0; i < 12; i++) {
-            for (uint8_t j = 0; j < 12; j++) {
-                matrix_tab[i][j].red = 0;
-                matrix_tab[i][j].green = 100;
-                matrix_tab[i][j].blue = 0;
-            }
-        }
-    }
-
-    send_leds();
-    afficher_couleur_nom();
+    LCD_UpdateMenu();
+}
+void int_BP3(void) {
+    _delay((unsigned long)((40)*(64000000U/4000.0)));
+    appliquer_action();
+    LCD_UpdateMenu();
 }
 
 
-void int_BP2(void)
-{
-     _delay((unsigned long)((40)*(64000000U/4000.0)));
+void appliquer_action(void) {
+    switch (etat_courant) {
+        case ICLED_COULEUR1:
 
+            send_color(100, 0, 0);
 
-    for (uint8_t i = 0; i < 12; i++) {
-        for (uint8_t j = 0; j < 12; j++) {
-            matrix_tab[i][j].red = 0;
-            matrix_tab[i][j].green = 0;
-            matrix_tab[i][j].blue = 100;
-        }
+        case ICLED_COULEUR2:
+
+            send_color(0, 100, 0);
+
+        case ICLED_COULEUR3:
+
+            send_color(0, 0, 100);
+
+        case MENU_COURANT:
+        case MESURE_COURANT:
+
+            etat_courant = MESURE_COURANT;
+            break;
+        default:
+            break;
     }
-
-    send_leds();
-    afficher_couleur_nom();
-}
-void int_BP3(void)
-{
-     _delay((unsigned long)((40)*(64000000U/4000.0)));
-
-
-    for (uint8_t i = 0; i < 12; i++) {
-        for (uint8_t j = 0; j < 12; j++) {
-            matrix_tab[i][j].red = 100;
-            matrix_tab[i][j].green = 0;
-            matrix_tab[i][j].blue = 0;
-        }
-    }
-
-    send_leds();
-    afficher_couleur_nom();
 }
 
 
@@ -26847,8 +26881,15 @@ int main(void) {
 
     uint8_t frame = 0;
 
+
+    uint8_t menu = 0;
+    uint8_t sous_menu = 0;
+
+
+    LCD_UpdateMenu();
+
     while(1) {
-# 373 "main.c"
+# 412 "main.c"
     }
 
     return 0;

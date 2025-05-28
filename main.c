@@ -69,7 +69,59 @@ typedef struct GRB {
         uint24_t color;
     };
 }GRB ;
+// --- Définitions des états du menu ---
+typedef enum {
+    MENU_PRINCIPAL,
+    MENU_ICLED,
+    MENU_COURANT,
+    ICLED_COULEUR1,
+    ICLED_COULEUR2,
+    ICLED_COULEUR3,
+    MESURE_COURANT
+} EtatMenu;
 
+EtatMenu etat_courant = MENU_PRINCIPAL;
+
+// ===============================================
+//             Fonction de l'afficheur
+// ===============================================
+
+void LCD_UpdateMenu(void) {
+    LCD_Init();
+    LCD_Clear();
+    switch (etat_courant) {
+        case MENU_PRINCIPAL:
+            LCD_SetCursor(0,0); LCD_String("Choix:");
+            LCD_SetCursor(1,0); LCD_String("1.ICLED 2.Mesure");
+            break;
+
+        case MENU_ICLED:
+            LCD_SetCursor(0,0); LCD_String("LED:");
+            LCD_SetCursor(1,0); LCD_String("1.R 2.G 3.B");
+            break;
+
+        case MENU_COURANT:
+            LCD_SetCursor(0,0); LCD_String("Mesure courant");
+            break;
+
+        case ICLED_COULEUR1:
+            LCD_SetCursor(0,0); LCD_String("Couleur: ROUGE");
+            break;
+
+        case ICLED_COULEUR2:
+            LCD_SetCursor(0,0); LCD_String("Couleur: VERT");
+            break;
+
+        case ICLED_COULEUR3:
+            LCD_SetCursor(0,0); LCD_String("Couleur: BLEU");
+            break;
+
+        case MESURE_COURANT:
+            LCD_SetCursor(0,0); LCD_String("Courant:");
+            // ajouter fonction d'affichage du courant ici
+            break;
+    }
+}
 // Matrice principale des LEDs
 GRB matrix_tab [LIGNE][COLUMN];  // matrix to use for each module 
 
@@ -163,97 +215,77 @@ void ws2812_reset() {
     __delay_us(80);  // Reset > 50µs
 }
 
-void afficher_couleur_nom(void) {
-    LCD_Init();
-    LCD_Clear();
-    LCD_SetCursor(0, 0);
-
-    uint8_t r = matrix_tab[0][0].red;
-    uint8_t g = matrix_tab[0][0].green;
-    uint8_t b = matrix_tab[0][0].blue;
-
-    if (r > g && r > b && r > 0) {
-        LCD_String("ROUGE");
-    } else if (g > r && g > b && g > 0) {
-        LCD_String("VERT");
-    } else if (b > r && b > g && b > 0) {
-        LCD_String("BLEU");
-    } else if (r == 0 && g == 0 && b == 0) {
-        LCD_String("ETEINT");
-    } else {
-        LCD_String("MELANGE");
-    }
-}
-
 // ===============================================
 //             Gestion des interruptions BP
 // ===============================================
 
-void int_BP1(void)
-{
-    __delay_ms(40); // Anti-rebond
+void int_BP1(void) {
+    __delay_ms(40); // antirebond
 
-    uint8_t held = 1;
-
-    // Vérifie si BP1 est resté appuyé pendant 1 seconde
-    for (uint8_t i = 0; i < 100; i++) { // 100 x 10ms = 1s
-        if (!BP1_GetValue()) {
-            held = 0; // Le bouton a été relâché avant 1s
+    switch (etat_courant) {
+        case MENU_PRINCIPAL:
+            etat_courant = MENU_ICLED;
             break;
-        }
-        __delay_ms(10);
+        case MENU_ICLED:
+            etat_courant = MENU_PRINCIPAL;
+            break;
+        case MENU_COURANT:
+            etat_courant = MENU_PRINCIPAL;
+            break;
+        default:
+            etat_courant = MENU_PRINCIPAL;
+            break;
     }
-
-    if (held) {
-        off_leds();
-    } else {
-        // Remplit la matrice avec du vert
-        for (uint8_t i = 0; i < LIGNE; i++) {
-            for (uint8_t j = 0; j < COLUMN; j++) {
-                matrix_tab[i][j].red = 0;
-                matrix_tab[i][j].green = 100;
-                matrix_tab[i][j].blue = 0;
-            }
-        }
-    }
-
-    send_leds(); // Envoie les couleurs à toutes les LEDs
-    afficher_couleur_nom();
+    LCD_UpdateMenu();
 }
                                                                                                                                                                                                                                                                                                                    
+void int_BP2(void) {
+    __delay_ms(40);
 
-void int_BP2(void)
-{
-     __delay_ms(40); // Antirebond
-     
-    // Met à jour la matrice entière avec du bleu
-    for (uint8_t i = 0; i < LIGNE; i++) {
-        for (uint8_t j = 0; j < COLUMN; j++) {
-            matrix_tab[i][j].red = 0;
-            matrix_tab[i][j].green = 0;
-            matrix_tab[i][j].blue = 100;
-        }
+    if (etat_courant == MENU_ICLED) {
+        etat_courant = ICLED_COULEUR1;
+    } else if (etat_courant == ICLED_COULEUR1) {
+        etat_courant = ICLED_COULEUR2;
+    } else if (etat_courant == ICLED_COULEUR2) {
+        etat_courant = ICLED_COULEUR3;
+    } else if (etat_courant == ICLED_COULEUR3) {
+        etat_courant = ICLED_COULEUR1;
+    } else if (etat_courant == MENU_PRINCIPAL) {
+        etat_courant = MENU_COURANT;
     }
 
-    send_leds(); // Envoie les couleurs à toutes les LEDs
-    afficher_couleur_nom();
+    LCD_UpdateMenu();
 }
-void int_BP3(void)
-{
-     __delay_ms(40); // Antirebond
-     
-    // Met à jour la matrice entière avec du rouge
-    for (uint8_t i = 0; i < LIGNE; i++) {
-        for (uint8_t j = 0; j < COLUMN; j++) {
-            matrix_tab[i][j].red = 100;
-            matrix_tab[i][j].green = 0;
-            matrix_tab[i][j].blue = 0;
-        }
-    }
+void int_BP3(void) {
+    __delay_ms(40);
+    appliquer_action();
+    LCD_UpdateMenu();
+}
 
-    send_leds(); // Envoie les couleurs à toutes les LEDs
-    afficher_couleur_nom();
-}
+// --- Action du bouton 3 selon le contexte ---
+/*void appliquer_action(void) {
+    switch (etat_courant) {
+        case ICLED_COULEUR1:
+            // Allume LED en rouge
+            send_color(100, 0, 0);
+            
+        case ICLED_COULEUR2:
+            // Allume LED en vert
+            send_color(0, 100, 0);
+            
+        case ICLED_COULEUR3:
+            // Allume LED en bleu
+            send_color(0, 0, 100);
+            
+        case MENU_COURANT:
+        case MESURE_COURANT:
+            // afficher valeur de courant
+            etat_courant = MESURE_COURANT;
+            break;
+        default:
+            break;
+    }
+}*/
 
 // ===============================================
 //         Gestion du timer via interruption
@@ -286,7 +318,7 @@ int main(void) {
     INTERRUPT_GlobalInterruptEnable();
     LED_TRIS = 0;  // Configure RB5 en sortie
     LED_PIN = 0;
-    
+
    
     /*LCD_String("Antoine");
     LCD_SetCursor(1, 0);
@@ -294,6 +326,9 @@ int main(void) {
 
     //uint8_t position = 0;
     uint8_t frame = 0;
+    
+        // Affichage initial
+    LCD_UpdateMenu();
     
     while(1) {
         
