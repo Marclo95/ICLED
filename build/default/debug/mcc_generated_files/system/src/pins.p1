@@ -120,25 +120,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 9843: extern volatile unsigned char IOCEF __attribute__((address(0x3A87)));
 [v _IOCEF `Vuc ~T0 @X0 0 e@14983 ]
 [v F15638 `(v ~T0 @X0 0 tf ]
-"387 mcc_generated_files/system/src/../pins.h
-[; ;mcc_generated_files/system/src/../pins.h: 387: void BP1_SetInterruptHandler(void (* InterruptHandler)(void));
+"407 mcc_generated_files/system/src/../pins.h
+[; ;mcc_generated_files/system/src/../pins.h: 407: void BP1_SetInterruptHandler(void (* InterruptHandler)(void));
 [v _BP1_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F15638 ]
-"409
-[; ;mcc_generated_files/system/src/../pins.h: 409: void BP1_DefaultInterruptHandler(void);
+"429
+[; ;mcc_generated_files/system/src/../pins.h: 429: void BP1_DefaultInterruptHandler(void);
 [v _BP1_DefaultInterruptHandler `(v ~T0 @X0 0 ef ]
 [v F15646 `(v ~T0 @X0 0 tf ]
-"427
-[; ;mcc_generated_files/system/src/../pins.h: 427: void BP2_SetInterruptHandler(void (* InterruptHandler)(void));
+"447
+[; ;mcc_generated_files/system/src/../pins.h: 447: void BP2_SetInterruptHandler(void (* InterruptHandler)(void));
 [v _BP2_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F15646 ]
-"449
-[; ;mcc_generated_files/system/src/../pins.h: 449: void BP2_DefaultInterruptHandler(void);
+"469
+[; ;mcc_generated_files/system/src/../pins.h: 469: void BP2_DefaultInterruptHandler(void);
 [v _BP2_DefaultInterruptHandler `(v ~T0 @X0 0 ef ]
 [v F15654 `(v ~T0 @X0 0 tf ]
-"467
-[; ;mcc_generated_files/system/src/../pins.h: 467: void BP3_SetInterruptHandler(void (* InterruptHandler)(void));
+"487
+[; ;mcc_generated_files/system/src/../pins.h: 487: void BP3_SetInterruptHandler(void (* InterruptHandler)(void));
 [v _BP3_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F15654 ]
-"489
-[; ;mcc_generated_files/system/src/../pins.h: 489: void BP3_DefaultInterruptHandler(void);
+"509
+[; ;mcc_generated_files/system/src/../pins.h: 509: void BP3_DefaultInterruptHandler(void);
 [v _BP3_DefaultInterruptHandler `(v ~T0 @X0 0 ef ]
 "3336 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 3336:     struct {
@@ -162,14 +162,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7918
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f26k42.h: 7918: extern volatile IOCAFbits_t IOCAFbits __attribute__((address(0x3A47)));
 [v _IOCAFbits `VS351 ~T0 @X0 0 e@14919 ]
-"377 mcc_generated_files/system/src/../pins.h
-[; ;mcc_generated_files/system/src/../pins.h: 377: void BP1_ISR(void);
+"397 mcc_generated_files/system/src/../pins.h
+[; ;mcc_generated_files/system/src/../pins.h: 397: void BP1_ISR(void);
 [v _BP1_ISR `(v ~T0 @X0 0 ef ]
-"417
-[; ;mcc_generated_files/system/src/../pins.h: 417: void BP2_ISR(void);
+"437
+[; ;mcc_generated_files/system/src/../pins.h: 437: void BP2_ISR(void);
 [v _BP2_ISR `(v ~T0 @X0 0 ef ]
-"457
-[; ;mcc_generated_files/system/src/../pins.h: 457: void BP3_ISR(void);
+"477
+[; ;mcc_generated_files/system/src/../pins.h: 477: void BP3_ISR(void);
 [v _BP3_ISR `(v ~T0 @X0 0 ef ]
 [v F15672 `(v ~T0 @X0 0 tf ]
 [v F15674 `(v ~T0 @X0 0 tf ]

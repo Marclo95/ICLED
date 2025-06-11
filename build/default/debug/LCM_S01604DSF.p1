@@ -2309,8 +2309,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _row `uc ~T0 @X0 1 r1 ]
 [v _column `uc ~T0 @X0 1 r2 ]
 [f ]
-[v F16227 `Cuc ~T0 @X0 -> 4 `i s ]
-[i F16227
+[v F16382 `Cuc ~T0 @X0 -> 4 `i s ]
+[i F16382
 :U ..
 "42
 [; ;LCM_S01604DSF.c: 42:     const uint8_t row_offsets[] = {0x00, 0x40, 0x10, 0x50};
@@ -2321,7 +2321,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _row_offsets `Cuc ~T0 @X0 -> 4 `i a ]
-[e = _row_offsets F16227 ]
+[e = _row_offsets F16382 ]
 "43
 [; ;LCM_S01604DSF.c: 43:     if (row > 3) row = 3;
 [e $ ! > -> _row `i -> 3 `i 2223  ]

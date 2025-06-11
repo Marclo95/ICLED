@@ -42,6 +42,8 @@ void send_leds (void);
 void on_leds (uint8_t r, uint8_t g, uint8_t b);
 void LCD_UpdateMenu(void);
 void appliquer_action(void);
+float lire_courant(void);
+float lire_tension(void);
 
 
 #ifdef	__cplusplus

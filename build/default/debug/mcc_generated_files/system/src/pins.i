@@ -26158,7 +26158,7 @@ unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 2 3
 # 39 "mcc_generated_files/system/src/../pins.h" 2
-# 361 "mcc_generated_files/system/src/../pins.h"
+# 381 "mcc_generated_files/system/src/../pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -26176,11 +26176,11 @@ void PIN_MANAGER_IOC(void);
 
 
 void BP1_ISR(void);
-# 387 "mcc_generated_files/system/src/../pins.h"
+# 407 "mcc_generated_files/system/src/../pins.h"
 void BP1_SetInterruptHandler(void (* InterruptHandler)(void));
-# 398 "mcc_generated_files/system/src/../pins.h"
+# 418 "mcc_generated_files/system/src/../pins.h"
 extern void (*BP1_InterruptHandler)(void);
-# 409 "mcc_generated_files/system/src/../pins.h"
+# 429 "mcc_generated_files/system/src/../pins.h"
 void BP1_DefaultInterruptHandler(void);
 
 
@@ -26190,11 +26190,11 @@ void BP1_DefaultInterruptHandler(void);
 
 
 void BP2_ISR(void);
-# 427 "mcc_generated_files/system/src/../pins.h"
+# 447 "mcc_generated_files/system/src/../pins.h"
 void BP2_SetInterruptHandler(void (* InterruptHandler)(void));
-# 438 "mcc_generated_files/system/src/../pins.h"
+# 458 "mcc_generated_files/system/src/../pins.h"
 extern void (*BP2_InterruptHandler)(void);
-# 449 "mcc_generated_files/system/src/../pins.h"
+# 469 "mcc_generated_files/system/src/../pins.h"
 void BP2_DefaultInterruptHandler(void);
 
 
@@ -26204,11 +26204,11 @@ void BP2_DefaultInterruptHandler(void);
 
 
 void BP3_ISR(void);
-# 467 "mcc_generated_files/system/src/../pins.h"
+# 487 "mcc_generated_files/system/src/../pins.h"
 void BP3_SetInterruptHandler(void (* InterruptHandler)(void));
-# 478 "mcc_generated_files/system/src/../pins.h"
+# 498 "mcc_generated_files/system/src/../pins.h"
 extern void (*BP3_InterruptHandler)(void);
-# 489 "mcc_generated_files/system/src/../pins.h"
+# 509 "mcc_generated_files/system/src/../pins.h"
 void BP3_DefaultInterruptHandler(void);
 # 36 "mcc_generated_files/system/src/pins.c" 2
 

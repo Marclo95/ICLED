@@ -60,3 +60,17 @@ void LCD_Init(void) {
     LCD_Command(0x06); // incrémentation automatique du curseur
     LCD_Clear();
 }
+
+//void LCD_createdChar(void) {
+//const LCD_droite[] = {
+//  B00100,
+//  B01110,
+//  B10101,
+//  B00100,
+//  B00100,
+//  B00100,
+//  B00000,
+//  B00000
+//};
+    
+//}

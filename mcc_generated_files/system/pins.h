@@ -132,6 +132,26 @@
 #define BP3_SetDigitalMode()     do { ANSELAbits.ANSELA3 = 0; } while(0)
 #define RA3_SetInterruptHandler  BP3_SetInterruptHandler
 
+// get/set RA4 aliases
+#define V_ILED_TRIS                 TRISAbits.TRISA4
+#define V_ILED_LAT                  LATAbits.LATA4
+#define V_ILED_PORT                 PORTAbits.RA4
+#define V_ILED_WPU                  WPUAbits.WPUA4
+#define V_ILED_OD                   ODCONAbits.ODCA4
+#define V_ILED_ANS                  ANSELAbits.ANSELA4
+#define V_ILED_SetHigh()            do { LATAbits.LATA4 = 1; } while(0)
+#define V_ILED_SetLow()             do { LATAbits.LATA4 = 0; } while(0)
+#define V_ILED_Toggle()             do { LATAbits.LATA4 = ~LATAbits.LATA4; } while(0)
+#define V_ILED_GetValue()           PORTAbits.RA4
+#define V_ILED_SetDigitalInput()    do { TRISAbits.TRISA4 = 1; } while(0)
+#define V_ILED_SetDigitalOutput()   do { TRISAbits.TRISA4 = 0; } while(0)
+#define V_ILED_SetPullup()          do { WPUAbits.WPUA4 = 1; } while(0)
+#define V_ILED_ResetPullup()        do { WPUAbits.WPUA4 = 0; } while(0)
+#define V_ILED_SetPushPull()        do { ODCONAbits.ODCA4 = 0; } while(0)
+#define V_ILED_SetOpenDrain()       do { ODCONAbits.ODCA4 = 1; } while(0)
+#define V_ILED_SetAnalogMode()      do { ANSELAbits.ANSELA4 = 1; } while(0)
+#define V_ILED_SetDigitalMode()     do { ANSELAbits.ANSELA4 = 0; } while(0)
+
 // get/set RB0 aliases
 #define E_TRIS                 TRISBbits.TRISB0
 #define E_LAT                  LATBbits.LATB0

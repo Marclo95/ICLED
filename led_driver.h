@@ -28,16 +28,16 @@
 
 // This is a guard condition so that contents of this file are not included
 // more than once.  
-#ifndef LED_DRIVER_H
+/*#ifndef LED_DRIVER_H
 #define LED_DRIVER_H
 
 #include <stdint.h>
 
-#define NUM_LEDS 10
+#define NUM_LEDS 144
 extern uint8_t led_colors[NUM_LEDS * 3];
 
 void set_led_color(uint8_t led_index, uint8_t g, uint8_t r, uint8_t b);
 void send_all_leds(void);
 
-#endif // LED_DRIVER_H
+#endif // LED_DRIVER_H*/
 

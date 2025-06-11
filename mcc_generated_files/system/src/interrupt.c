@@ -84,6 +84,14 @@ void __interrupt() INTERRUPT_InterruptManager (void)
     {
         PIN_MANAGER_IOC();
     }
+    else if(PIE1bits.ADIE == 1 && PIR1bits.ADIF == 1)
+    {
+        ADC_ISR();
+    }
+    else if(PIE1bits.ADTIE == 1 && PIR1bits.ADTIF == 1)
+    {
+        ADC_ThresholdISR();
+    }
     else if(PIE4bits.TMR1IE == 1 && PIR4bits.TMR1IF == 1)
     {
         TMR1_OverflowISR();

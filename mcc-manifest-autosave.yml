@@ -2,7 +2,7 @@
 
 manifest_file_version: 1.0.0
 project: STI3958
-creation_date: 2025-05-27T15:47:32.678+02:00[Europe/Paris]
+creation_date: 2025-06-10T14:32:05.274+02:00[Europe/Paris]
 operating_system: Windows 11
 mcc_mode: IDE
 mcc_mode_version: v6.25
@@ -22,6 +22,7 @@ modules:
 - {name: '@mchp-mcc/pic18-configuration-bits-v7', type: MELODY, version: 1.0.4}
 - {name: '@mchp-mcc/pic18-pin-manager', type: MELODY, version: 3.7.1}
 - {name: '@mchp-mcc/pin-content-processor', type: MELODY, version: 3.9.1}
+- {name: '@mchp-mcc/scf-pic8-adcc-v1', type: MELODY, version: 5.0.0}
 - {name: '@mchp-mcc/scf-pic8-interrupt-v1', type: MELODY, version: 5.2.11}
 - {name: '@mchp-mcc/scf-pic8-osc-v1', type: MELODY, version: 4.4.0}
 - {name: '@mchp-mcc/scf-pic8-tmr1-v1', type: MELODY, version: 5.2.0}

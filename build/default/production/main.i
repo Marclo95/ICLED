@@ -26169,7 +26169,7 @@ void CLOCK_Initialize(void);
 # 40 "./mcc_generated_files/system/config_bits.h" 2
 # 42 "./mcc_generated_files/system/system.h" 2
 # 1 "./mcc_generated_files/system/../system/pins.h" 1
-# 361 "./mcc_generated_files/system/../system/pins.h"
+# 381 "./mcc_generated_files/system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -26187,11 +26187,11 @@ void PIN_MANAGER_IOC(void);
 
 
 void BP1_ISR(void);
-# 387 "./mcc_generated_files/system/../system/pins.h"
+# 407 "./mcc_generated_files/system/../system/pins.h"
 void BP1_SetInterruptHandler(void (* InterruptHandler)(void));
-# 398 "./mcc_generated_files/system/../system/pins.h"
+# 418 "./mcc_generated_files/system/../system/pins.h"
 extern void (*BP1_InterruptHandler)(void);
-# 409 "./mcc_generated_files/system/../system/pins.h"
+# 429 "./mcc_generated_files/system/../system/pins.h"
 void BP1_DefaultInterruptHandler(void);
 
 
@@ -26201,11 +26201,11 @@ void BP1_DefaultInterruptHandler(void);
 
 
 void BP2_ISR(void);
-# 427 "./mcc_generated_files/system/../system/pins.h"
+# 447 "./mcc_generated_files/system/../system/pins.h"
 void BP2_SetInterruptHandler(void (* InterruptHandler)(void));
-# 438 "./mcc_generated_files/system/../system/pins.h"
+# 458 "./mcc_generated_files/system/../system/pins.h"
 extern void (*BP2_InterruptHandler)(void);
-# 449 "./mcc_generated_files/system/../system/pins.h"
+# 469 "./mcc_generated_files/system/../system/pins.h"
 void BP2_DefaultInterruptHandler(void);
 
 
@@ -26215,11 +26215,11 @@ void BP2_DefaultInterruptHandler(void);
 
 
 void BP3_ISR(void);
-# 467 "./mcc_generated_files/system/../system/pins.h"
+# 487 "./mcc_generated_files/system/../system/pins.h"
 void BP3_SetInterruptHandler(void (* InterruptHandler)(void));
-# 478 "./mcc_generated_files/system/../system/pins.h"
+# 498 "./mcc_generated_files/system/../system/pins.h"
 extern void (*BP3_InterruptHandler)(void);
-# 489 "./mcc_generated_files/system/../system/pins.h"
+# 509 "./mcc_generated_files/system/../system/pins.h"
 void BP3_DefaultInterruptHandler(void);
 # 43 "./mcc_generated_files/system/system.h" 2
 # 1 "./mcc_generated_files/system/../system/interrupt.h" 1
@@ -26257,6 +26257,528 @@ extern void (*INT2_InterruptHandler)(void);
 void INT2_DefaultInterruptHandler(void);
 # 44 "./mcc_generated_files/system/system.h" 2
 
+# 1 "./mcc_generated_files/system/../adc/adc.h" 1
+# 40 "./mcc_generated_files/system/../adc/adc.h"
+# 1 "./mcc_generated_files/system/../adc/./adc_types.h" 1
+# 62 "./mcc_generated_files/system/../adc/./adc_types.h"
+typedef int16_t adc_result_t;
+
+
+
+
+
+
+typedef int32_t adc_accumulate_t;
+
+
+
+
+
+
+typedef int16_t adc_threshold_t;
+
+
+
+
+
+
+typedef uint8_t adc_repeat_count_t;
+
+
+
+
+
+
+typedef enum
+{
+    ADC_CHANNEL_VSS = 0x3b,
+    ADC_CHANNEL_TEMP = 0x3c,
+    ADC_CHANNEL_DAC1 = 0x3d,
+    ADC_CHANNEL_FVR_BUFFER1 = 0x3e,
+    ADC_CHANNEL_FVR_BUFFER2 = 0x3f,
+    ADC_CHANNEL_ANA4 = 0x4,
+    ADC_CHANNEL_ANA0 = 0x0
+} adc_channel_t;
+
+
+
+
+
+
+typedef enum
+{
+    ADC_BASIC = 0x0,
+    ADC_SERIES_ACCUMULATE = 0x1,
+    ADC_SERIES_AVERAGE = 0x2,
+    ADC_BURST_AVERAGE = 0x3,
+    ADC_LOW_PASS_FILTER = 0x4
+} adc_computation_mode_t;
+
+
+
+
+
+
+typedef enum
+{
+    ADC_FIRST_DERIVATIVE_OF_SINGLE_MEASUREMENT = 0x0,
+    ADC_ACTUAL_RESULT_VS_SETPOINT = 0x1,
+    ADC_ACTUAL_RESULT_VS_FILTERED_VALUE = 0x2,
+    ADC_FIRST_DERIVATIVE_OF_FILTERED_VALUE = 0x4,
+    ADC_FILTERED_VALUE_VS_SETPOINT = 0x5
+} adc_calculation_mode_t;
+
+
+
+
+
+
+typedef enum
+{
+    ADC_NEVER_INTERRUPT = 0x0,
+    ADC_BELOW_LOWER_THRESHOLD = 0x1,
+    ADC_ABOVE_LOWER_THRESHOLD = 0x2,
+    ADC_INSIDE_LOWER_AND_UPPER_THRESHOLD = 0x3,
+    ADC_OUTSIDE_LOWER_AND_UPPER_THRESHOLD = 0x4,
+    ADC_BELOW_UPPER_THRESHOLD = 0x5,
+    ADC_ABOVE_UPPER_THRESHOLD = 0x6,
+    ADC_ALWAYS_INTERRUPT = 0x7
+} adc_threshold_mode_t ;
+
+
+
+
+
+
+typedef enum
+{
+    ADC_TRIGGER_SOURCE_DISABLED = 0x0,
+    ADC_TRIGGER_SOURCE_ADACTPPS = 0x1,
+    ADC_TRIGGER_SOURCE_TMR0 = 0x2,
+    ADC_TRIGGER_SOURCE_TMR1 = 0x3,
+    ADC_TRIGGER_SOURCE_TMR2 = 0x4,
+    ADC_TRIGGER_SOURCE_TMR3 = 0x5,
+    ADC_TRIGGER_SOURCE_TMR4 = 0x6,
+    ADC_TRIGGER_SOURCE_TMR5 = 0x7,
+    ADC_TRIGGER_SOURCE_TMR6 = 0x8,
+    ADC_TRIGGER_SOURCE_SMT1 = 0x9,
+    ADC_TRIGGER_SOURCE_CCP1 = 0xa,
+    ADC_TRIGGER_SOURCE_CCP2 = 0xb,
+    ADC_TRIGGER_SOURCE_CCP3 = 0xc,
+    ADC_TRIGGER_SOURCE_CCP4 = 0xd,
+    ADC_TRIGGER_SOURCE_PWM5 = 0xe,
+    ADC_TRIGGER_SOURCE_PWM6 = 0xf,
+    ADC_TRIGGER_SOURCE_PWM7 = 0x10,
+    ADC_TRIGGER_SOURCE_PWM8 = 0x11,
+    ADC_TRIGGER_SOURCE_NCO1 = 0x12,
+    ADC_TRIGGER_SOURCE_CMP1 = 0x13,
+    ADC_TRIGGER_SOURCE_CMP2 = 0x14,
+    ADC_TRIGGER_SOURCE_LOGICAL_OR_OF_ALL_IOC_FLAGS = 0x15,
+    ADC_TRIGGER_SOURCE_CLC1 = 0x16,
+    ADC_TRIGGER_SOURCE_CLC2 = 0x17,
+    ADC_TRIGGER_SOURCE_CLC3 = 0x18,
+    ADC_TRIGGER_SOURCE_CLC4 = 0x19,
+    ADC_TRIGGER_SOURCE_ADERRH = 0x1a,
+    ADC_TRIGGER_SOURCE_ADRESH = 0x1b,
+    ADC_TRIGGER_SOURCE_ADPCH = 0x1d
+} adc_trigger_source_t ;
+
+
+
+
+
+
+typedef enum
+{
+    ADC_NOT_CONVERTING = 0x0,
+    ADC_1ST_PRECHARGE = 0x1,
+    ADC_1ST_ACQUISITION = 0x2,
+    ADC_1ST_CONVERSION = 0x3,
+    ADC_SUSPENDED_BETWEEN_1ST_AND_2ND_SAMPLE = 0x4,
+    ADC_2ND_PRECHARGE = 0x5,
+    ADC_2ND_ACQUISITION = 0x6,
+    ADC_2ND_CONVERSION = 0x7
+} adc_conversion_stage_t;
+# 41 "./mcc_generated_files/system/../adc/adc.h" 2
+# 62 "./mcc_generated_files/system/../adc/adc.h"
+void ADC_Initialize(void);
+
+
+
+
+
+
+
+void ADC_Deinitialize(void);
+
+
+
+
+
+
+
+void ADC_Enable(void);
+
+
+
+
+
+
+
+void ADC_Disable(void);
+
+
+
+
+
+
+
+void ADC_ChannelSelect(adc_channel_t channel);
+# 104 "./mcc_generated_files/system/../adc/adc.h"
+void ADC_ConversionStart(void);
+# 114 "./mcc_generated_files/system/../adc/adc.h"
+_Bool ADC_IsConversionDone(void);
+
+
+
+
+
+
+
+void ADC_ConversionStop(void);
+# 131 "./mcc_generated_files/system/../adc/adc.h"
+adc_result_t ADC_ConversionResultGet(void);
+
+
+
+
+
+
+
+void ADC_ComputationModeSet(adc_computation_mode_t computationMode);
+
+
+
+
+
+
+
+void ADC_ThresholdModeSet(adc_threshold_mode_t thresholdMode);
+
+
+
+
+
+
+
+void ADC_SampleRepeatCountSet(adc_repeat_count_t repeatCount);
+
+
+
+
+
+
+
+void ADC_UpperThresholdSet(adc_threshold_t upperThreshold);
+
+
+
+
+
+
+
+void ADC_LowerThresholdSet(adc_threshold_t lowerThreshold);
+
+
+
+
+
+
+
+adc_accumulate_t ADC_AccumulatedResultGet(void);
+
+
+
+
+
+
+
+adc_result_t ADC_ChannelSelectAndConvert(adc_channel_t channel);
+# 196 "./mcc_generated_files/system/../adc/adc.h"
+void ADC_StopOnInterruptEnable(void);
+
+
+
+
+
+
+
+void ADC_StopOnInterruptDisable(void);
+
+
+
+
+
+
+
+void ADC_SampleCapacitorDischarge(void);
+
+
+
+
+
+
+
+void ADC_AcquisitionTimeSet(uint16_t acquisitionValue);
+
+
+
+
+
+
+
+void ADC_PrechargeTimeSet(uint16_t prechargeTime);
+
+
+
+
+
+
+
+adc_repeat_count_t ADC_CurrentConversionCountGet(void);
+
+
+
+
+
+
+
+void ADC_AccumulatorClear(void);
+# 253 "./mcc_generated_files/system/../adc/adc.h"
+_Bool ADC_IsAccumulatorClearComplete(void);
+# 262 "./mcc_generated_files/system/../adc/adc.h"
+_Bool ADC_HasAccumulatorOverflowed(void);
+# 271 "./mcc_generated_files/system/../adc/adc.h"
+adc_result_t ADC_FilterValueGet(void);
+
+
+
+
+
+
+
+adc_result_t ADC_PreviousResultGet(void);
+
+
+
+
+
+
+
+void ADC_SetPointDefine(adc_threshold_t setPoint);
+
+
+
+
+
+
+
+adc_result_t ADC_ErrorCalculationGet(void);
+
+
+
+
+
+
+
+void ADC_DoubleSamplingEnable(void);
+
+
+
+
+
+
+
+void ADC_DoubleSamplingDisable(void);
+
+
+
+
+
+
+
+void ADC_ContinuousConversionEnable(void);
+
+
+
+
+
+
+
+void ADC_ContinuousConversionDisable(void);
+
+
+
+
+
+
+
+_Bool ADC_IsErrorGreaterThanUpperThreshold(void);
+# 344 "./mcc_generated_files/system/../adc/adc.h"
+_Bool ADC_IsErrorLesserThanLowerThreshold(void);
+
+
+
+
+
+
+
+adc_conversion_stage_t ADC_ConversionStageStatusGet(void);
+
+
+
+
+
+
+
+void ADC_AutoTriggerSourceSet(adc_trigger_source_t triggerSource);
+
+
+
+
+
+
+
+void ADC_ErrorCalculationModeSet(adc_calculation_mode_t errorCalculationMode);
+
+
+
+
+
+
+
+void ADC_CalculationRightShiftSet(uint8_t rightShiftValue);
+
+
+
+
+
+
+
+void ADC_ChargePumpEnable(void);
+
+
+
+
+
+
+
+void ADC_ChargePumpDisable(void);
+# 401 "./mcc_generated_files/system/../adc/adc.h"
+_Bool ADC_IsChargePumpReady(void);
+
+
+
+
+
+
+
+uint8_t ADC_ResolutionGet(void);
+# 418 "./mcc_generated_files/system/../adc/adc.h"
+_Bool ADC_IsBusy(void);
+
+
+
+
+
+
+
+void ADC_BusyStatusSet(_Bool status);
+
+
+
+
+
+
+
+void ADC_ConversionDoneInterruptFlagClear(void);
+
+
+
+
+
+
+
+void ADC_ThresholdInterruptFlagClear(void);
+# 451 "./mcc_generated_files/system/../adc/adc.h"
+_Bool ADC_IsConversionDoneInterruptFlagSet(void);
+# 460 "./mcc_generated_files/system/../adc/adc.h"
+_Bool ADC_IsThresholdInterruptFlagSet(void);
+
+
+
+
+
+
+
+void ADC_ConversionDoneCallbackRegister(void (*callback)(void));
+
+
+
+
+
+
+
+void ADC_ThresholdCallbackRegister(void (*callback)(void));
+
+
+
+
+
+
+
+void ADC_ConversionDoneInterruptEnable(void);
+
+
+
+
+
+
+
+void ADC_ConversionDoneInterruptDisable(void);
+
+
+
+
+
+
+
+void ADC_ThresholdInterruptEnable(void);
+
+
+
+
+
+
+
+void ADC_ThresholdInterruptDisable(void);
+
+
+
+
+
+
+
+void ADC_ISR(void);
+
+
+
+
+
+
+
+void ADC_ThresholdISR(void);
+# 46 "./mcc_generated_files/system/system.h" 2
 # 1 "./mcc_generated_files/system/../timer/tmr1.h" 1
 # 40 "./mcc_generated_files/system/../timer/tmr1.h"
 # 1 "./mcc_generated_files/system/../timer/tmr1_deprecated.h" 1
@@ -26361,7 +26883,7 @@ void TMR1_Tasks(void);
 
 
  void TMR1_GateCallbackRegister(void (* CallbackHandler)(void));
-# 46 "./mcc_generated_files/system/system.h" 2
+# 47 "./mcc_generated_files/system/system.h" 2
 
 
 
@@ -26602,15 +27124,12 @@ void send_leds (void);
 void on_leds (uint8_t r, uint8_t g, uint8_t b);
 void LCD_UpdateMenu(void);
 void appliquer_action(void);
+float lire_courant(void);
+float lire_tension(void);
 # 44 "main.c" 2
 # 1 "./led_driver.h" 1
-# 37 "./led_driver.h"
-extern uint8_t led_colors[10 * 3];
-
-void set_led_color(uint8_t led_index, uint8_t g, uint8_t r, uint8_t b);
-void send_all_leds(void);
 # 45 "main.c" 2
-# 60 "main.c"
+# 67 "main.c"
 typedef struct GRB {
       union{
         struct {
@@ -26628,9 +27147,16 @@ typedef enum {
     MENU_PRINCIPAL,
     MENU_ICLED,
     MENU_COURANT,
+    MENU_ARC_EN_CIEL,
     ICLED_COULEUR1,
     ICLED_COULEUR2,
     ICLED_COULEUR3,
+    ICLED_COULEUR4,
+    ICLED_COULEUR5,
+    ICLED_COULEUR6,
+    ICLED_COULEUR7,
+    ICLED_COULEUR8,
+    Eteindre,
     MESURE_COURANT
 } EtatMenu;
 
@@ -26640,18 +27166,23 @@ EtatMenu etat_courant = MENU_PRINCIPAL;
 
 
 
+
 void LCD_UpdateMenu(void) {
+
+    char buffer[16];
+
     LCD_Init();
-    LCD_Clear();
     switch (etat_courant) {
         case MENU_PRINCIPAL:
-            LCD_SetCursor(0,0); LCD_String("Choix:");
-            LCD_SetCursor(1,0); LCD_String("1.ICLED 2.Mesure");
+            LCD_SetCursor(0,6); LCD_String("Menu");
+            LCD_SetCursor(1,0); LCD_String("1.ICLED 2.MESURE");
+            LCD_SetCursor(2,0); LCD_String("3.INTEN 4.ANIMA");
+            LCD_SetCursor(2,15); LCD_Char(0b11011111);
             break;
 
         case MENU_ICLED:
             LCD_SetCursor(0,0); LCD_String("LED:");
-            LCD_SetCursor(1,0); LCD_String("1.R 2.G 3.B");
+            LCD_SetCursor(1,0); LCD_String("1.R 2.G 3.B 4.O");
             break;
 
         case MENU_COURANT:
@@ -26660,18 +27191,66 @@ void LCD_UpdateMenu(void) {
 
         case ICLED_COULEUR1:
             LCD_SetCursor(0,0); LCD_String("Couleur: ROUGE");
+            LCD_SetCursor(1,15); LCD_Char(0b01111110);
             break;
 
         case ICLED_COULEUR2:
             LCD_SetCursor(0,0); LCD_String("Couleur: VERT");
+            LCD_SetCursor(1,15); LCD_Char(0b01111110);
             break;
 
         case ICLED_COULEUR3:
             LCD_SetCursor(0,0); LCD_String("Couleur: BLEU");
+            LCD_SetCursor(1,15); LCD_Char(0b01111110);
+            break;
+
+        case ICLED_COULEUR4:
+            LCD_SetCursor(0,0); LCD_String("Couleur: ORANGE");
+            LCD_SetCursor(1,15); LCD_Char(0b01111110);
+            break;
+
+        case ICLED_COULEUR5:
+            LCD_SetCursor(0,0); LCD_String("Couleur: JAUNE");
+            LCD_SetCursor(1,15); LCD_Char(0b01111110);
+            break;
+
+        case ICLED_COULEUR6:
+            LCD_SetCursor(0,0); LCD_String("Couleur: VIOLET");
+            LCD_SetCursor(1,15); LCD_Char(0b01111110);
+            break;
+
+        case ICLED_COULEUR7:
+            LCD_SetCursor(0,0); LCD_String("Couleur: ROSE");
+            LCD_SetCursor(1,15); LCD_Char(0b01111110);
+            break;
+
+        case ICLED_COULEUR8:
+            LCD_SetCursor(0,0); LCD_String("Couleur: BLANC");
+            LCD_SetCursor(1,15); LCD_Char(0b01111110);
+            break;
+
+        case MENU_ARC_EN_CIEL:
+
+            break;
+
+         case Eteindre:
+            LCD_SetCursor(0,0); LCD_String("ETEINDRE");
+            LCD_SetCursor(1,15); LCD_Char(0b01111111);
             break;
 
         case MESURE_COURANT:
-            LCD_SetCursor(0,0); LCD_String("Courant:");
+            LCD_SetCursor(0,0);
+            LCD_String("V_Iled:");
+            LCD_SetCursor(1, 0);
+            float tension = lire_tension();
+            sprintf(buffer, "%.2f V", tension);
+            LCD_String(buffer);
+            LCD_SetCursor(2,0);
+            LCD_String("Courent leds:");
+            LCD_SetCursor(3,0);
+            int courant = lire_tension() ;
+            sprintf(buffer, "%.3e A", courant);
+            LCD_String(buffer);
 
             break;
     }
@@ -26686,8 +27265,15 @@ _Bool flag_start = 0 ;
 const GRB COLORS_TAB[] = {
     {.red = 100, .green = 0, .blue = 0},
     {.red = 0, .green = 100, .blue = 0},
-    {.red = 0, .green = 0, .blue = 100}
+    {.red = 0, .green = 0, .blue = 100},
+    {.red = 100, .green = 50, .blue = 0},
+    {.red = 100, .green = 100, .blue = 0},
+    {.red = 50, .green = 0, .blue = 100},
+    {.red = 100, .green = 0, .blue = 50},
+    {.red = 100, .green = 100, .blue = 100}
 };
+
+
 
 
 
@@ -26704,8 +27290,9 @@ void off_leds(void){
             matrix_tab[i][j].blue = 0;
         }
     }
-
+     send_leds();
 }
+
 
 void on_leds(uint8_t r, uint8_t g, uint8_t b){
     uint8_t i = 0;
@@ -26736,6 +27323,25 @@ void send_leds (void){
 
 
 
+
+void rainbow_scroll_vertical(void) {
+    static uint8_t offset = 0;
+
+    for (uint8_t i = 0; i < 12; i++) {
+        uint8_t color_index = (i + offset) % (sizeof(COLORS_TAB)/sizeof(COLORS_TAB[0]));
+        for (uint8_t j = 0; j < 12; j++) {
+            matrix_tab[i][j] = COLORS_TAB[color_index];
+        }
+    }
+
+    send_leds();
+    offset = (offset + 1) % (sizeof(COLORS_TAB)/sizeof(COLORS_TAB[0]));
+}
+
+
+
+
+
 void send_bit(uint8_t bit) {
     if (bit) {
         LATBbits.LATB5 = 1;
@@ -26757,6 +27363,8 @@ void send_byte(uint8_t byte) {
     }
 }
 
+
+
 void send_color(uint8_t r, uint8_t g, uint8_t b) {
     send_byte(g);
     send_byte(r);
@@ -26771,6 +27379,24 @@ void ws2812_reset() {
 
 
 
+float lire_tension(void)
+{
+    ADC_ChannelSelect(ADC_CHANNEL_ANA4);
+    ADC_ConversionStart();
+    adc_result_t adc_val = ADC_ConversionResultGet();
+
+   float tension = (adc_val * 5.f) / 4095.0f;
+    return tension;
+}
+
+float lire_courant(void)
+{
+    int courant = lire_tension() ;
+    return courant;
+}
+
+
+
 
 void int_BP1(void) {
     _delay((unsigned long)((40)*(64000000U/4000.0)));
@@ -26779,36 +27405,49 @@ void int_BP1(void) {
         case MENU_PRINCIPAL:
             etat_courant = MENU_ICLED;
             break;
-        case MENU_ICLED:
+
+        case Eteindre:
             etat_courant = MENU_PRINCIPAL;
             break;
-        case MENU_COURANT:
-            etat_courant = MENU_PRINCIPAL;
-            break;
+
         default:
             etat_courant = MENU_PRINCIPAL;
             break;
     }
+
     LCD_UpdateMenu();
 }
 
 void int_BP2(void) {
     _delay((unsigned long)((40)*(64000000U/4000.0)));
 
-    if (etat_courant == MENU_ICLED) {
+     if (etat_courant == MENU_ICLED) {
         etat_courant = ICLED_COULEUR1;
     } else if (etat_courant == ICLED_COULEUR1) {
         etat_courant = ICLED_COULEUR2;
     } else if (etat_courant == ICLED_COULEUR2) {
         etat_courant = ICLED_COULEUR3;
     } else if (etat_courant == ICLED_COULEUR3) {
-        etat_courant = ICLED_COULEUR1;
+        etat_courant = ICLED_COULEUR4;
+    } else if (etat_courant == ICLED_COULEUR4) {
+        etat_courant = ICLED_COULEUR5;
+    } else if (etat_courant == ICLED_COULEUR5) {
+        etat_courant = ICLED_COULEUR6;
+    } else if (etat_courant == ICLED_COULEUR6) {
+        etat_courant = ICLED_COULEUR7;
+    } else if (etat_courant == ICLED_COULEUR7) {
+        etat_courant = ICLED_COULEUR8;
+    } else if (etat_courant == ICLED_COULEUR8) {
+        etat_courant = Eteindre;
+    } else if (etat_courant == Eteindre) {
+        etat_courant = MENU_PRINCIPAL;
     } else if (etat_courant == MENU_PRINCIPAL) {
         etat_courant = MENU_COURANT;
     }
 
     LCD_UpdateMenu();
 }
+
 void int_BP3(void) {
     _delay((unsigned long)((40)*(64000000U/4000.0)));
     appliquer_action();
@@ -26816,43 +27455,31 @@ void int_BP3(void) {
 }
 
 
+
+
 void appliquer_action(void) {
-    switch (etat_courant) {
-        case ICLED_COULEUR1:
-
-            on_leds(100, 0, 0);
-            break;
-        case ICLED_COULEUR2:
-
-            on_leds(0, 100, 0);
-            break;
-        case ICLED_COULEUR3:
-
-            on_leds(0, 0, 100);
-            break;
-        case MENU_COURANT:
-        case MESURE_COURANT:
-
-            etat_courant = MESURE_COURANT;
-            break;
-        default:
-            break;
+    if (etat_courant >= ICLED_COULEUR1 && etat_courant <= ICLED_COULEUR8) {
+        GRB color = COLORS_TAB[etat_courant - ICLED_COULEUR1];
+        on_leds(color.red, color.green, color.blue);
+    } else if (etat_courant == Eteindre) {
+        off_leds();
+    } else if (etat_courant == MENU_COURANT) {
+        etat_courant = MESURE_COURANT;
     }
 }
 
 
 
 
-void TMR1_handler( void){
 
+void TMR1_handler( void){
 
     static uint16_t timer_1s = 0;
 
-    if( timer_1s ++ > 20){
+    if( timer_1s ++ > 10){
         timer_1s = 0;
-        flag_start = !flag_start;
+        do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
     }
-
 }
 
 
@@ -26861,7 +27488,7 @@ void TMR1_handler( void){
 int main(void) {
 
     SYSTEM_Initialize();
-
+    ADC_Initialize();
     TMR1_OverflowCallbackRegister(TMR1_handler);
 
    BP1_SetInterruptHandler(int_BP1);
@@ -26871,20 +27498,19 @@ int main(void) {
     (INTCON0bits.GIE = 1);
     TRISBbits.TRISB5 = 0;
     LATBbits.LATB5 = 0;
+    TRISAbits.TRISA0 = 0;
+    LATAbits.LATA0 = 0;
 
 
-
-
-
-
-
-    uint8_t frame = 0;
 
 
     LCD_UpdateMenu();
 
+
+    uint8_t frame = 0;
+
     while(1) {
-# 407 "main.c"
+
     }
 
     return 0;
